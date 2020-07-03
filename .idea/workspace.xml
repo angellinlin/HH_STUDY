@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:liubowen2542" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f893634b-4fb5-425c-84c7-1e60a248cbaf" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1e8DjeYaZVj5RNVvLvFCoiZe5E7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HH_STUDY-master" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\HH_STUDY\resumeSystem\src\sys" />
+      <recent name="D:\HH_STUDY\resumeSystem\src\bean" />
+      <recent name="D:\HH_STUDY\HR_SYS\HR_src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="resumeSys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sys.resumeSys" />
+      <module name="HH_STUDY" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sys.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.resumeSys" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f893634b-4fb5-425c-84c7-1e60a248cbaf" name="Default Changelist" comment="" />
+      <created>1593694462565</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593694462565</updated>
+      <workItem from="1593694464846" duration="596000" />
+      <workItem from="1593695076704" duration="1678000" />
+      <workItem from="1593737488686" duration="263000" />
+      <workItem from="1593737765988" duration="676000" />
+      <workItem from="1593767568266" duration="194000" />
+      <workItem from="1593777219949" duration="4638000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="liubowen2542" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="249" y="0" key="#Project_Structure" timestamp="1593782004614">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1593782004614" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593781884437">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1593781884437" />
+    <state x="525" y="212" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593777380575">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="525" y="212" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1593777380575" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1593696057867">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1593696057867" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1593782076821">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1593782076821" />
+    <state width="1493" height="394" key="GridCell.Tab.0.bottom" timestamp="1593784446177">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="394" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593784446177" />
+    <state width="1493" height="394" key="GridCell.Tab.0.center" timestamp="1593784446177">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="394" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593784446177" />
+    <state width="1493" height="394" key="GridCell.Tab.0.left" timestamp="1593784446177">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="394" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593784446177" />
+    <state width="1493" height="394" key="GridCell.Tab.0.right" timestamp="1593784446177">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="394" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593784446177" />
+    <state x="270" y="56" key="SettingsEditor" timestamp="1593694971176">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1593694971176" />
+  </component>
+</project>

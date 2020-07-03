@@ -11,3 +11,6 @@
 .idea/vcs.xml
 HH_STUDY.iml
 #src/
+HR_SYS_SERVER/.gradle
+HR_SYS_SERVER/.idea
+HR_SYS_SERVER/HR_SYS_SERVER.iml

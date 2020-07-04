@@ -18,9 +18,17 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+    compile 'mysql:mysql-connector-java'
+    compile group: 'org.mybatis.generator', name: 'mybatis-generator-core', version: '1.4.0'
+    compile 'com.alibaba:druid:1.0.29'
+    compile group: 'com.github.pagehelper', name: 'pagehelper-spring-boot-starter', version: '1.2.13'
+
 }
 
 test {

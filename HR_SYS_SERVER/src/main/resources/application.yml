@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: local
+  application:
+    name: hrsys
+server:
+  port: 8099
+#也可以使用-表示多文档块
+---
+spring:
+  profiles: local
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hrsys?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: "000000"
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+    - classpath*:com/**/mapper/*.xml

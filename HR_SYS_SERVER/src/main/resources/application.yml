@@ -1,10 +1,29 @@
+server:
+  port: 8099
 spring:
   profiles:
     active: local
   application:
     name: hrsys
-server:
-  port: 8099
+  redis:
+    host: localhost
+    database: 0
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+    timeout: 3000ms
+redis:
+  key:
+    prefix:
+      authCode: "authCode-"
+    expire:
+        time: 120
+
+
 #也可以使用-表示多文档块
 ---
 spring:

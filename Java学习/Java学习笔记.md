@@ -92,7 +92,74 @@ public enum HeroType{
 
 1. 接口、实现
 
-   implements 
+   关键字 implements 
 
    接口定义了规范，而接口的实现类按照这样的规范去实现。
    一个接口可以有多个实现类，这样就体现了java的多态。
+
+   ```java
+   public class ADHero extends Hero implements AD { //AD是ADHero的接口
+       @Override
+       public void physicalAttack(){
+           System.out.println("进行物理攻击");
+       }
+   }
+   ```
+
+2. 对象类型转换
+
+   引用类型与对象类型不一致时，进行转换
+
+   - 子类转父类（向上转型）
+
+     ```
+     Hero h = new Hero();
+     ADHero ad = new ADHero();
+     h = ad;
+     ```
+
+   - 父类转子类（向下转型）
+
+     父类转子类需要强制类型转换，能不能转换成功，要看父类具体引用指向的是哪种对象。
+
+     ```java
+     Hero h = new Hero();
+     ADHero ad = new ADHero();
+     h = ad;
+     ad= (ADHero)h;//强制类型转换，成功
+     
+     Supprot s=new Support();
+     h=s;
+     ad=(ADHero)h;//失败
+     ```
+
+   - 无继承关系的两个类，相互转换会失败
+
+   - 实现类转换为接口（向上转型）
+
+     ```java
+     ADHero ad = new ADHero();
+     AD adi = ad;//AD是ADHero的接口，成功
+     ```
+
+   - 接口转实现类（向下转型）
+
+     要看接口具体指向的是哪种对象
+
+   - instanceof 判断一个引用的对象是否是该类型、或该类型的子类类型
+
+     ```java
+     ADHero ad = new ADHero();
+     Hero h1 = ad;
+     System.out.println(h1 instanceof ADHero);
+     ```
+
+3. 重写
+
+   子类继承父类的对象方法，继承后重复提供该方法，又称为覆盖（override）。重写提高了代码复用性，增强可扩展性。
+
+   - @Override是伪代码,表示重写(当然不写也可以)，不过写上有如下好处:
+     - 可以当注释用,方便阅读；
+     - 编译器可以验证@Override下面的方法名是否是父类所有的，如果没有则报错。例如，你如果没写@Override，而你下面的方法名又写错了，这时你的编译器是可以编译通过的，因为编译器会认为这个方法是子类中自己增加的方法。
+
+   

@@ -25,7 +25,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f893634b-4fb5-425c-84c7-1e60a248cbaf" name="Default Changelist" comment="" />
+    <list default="true" id="f893634b-4fb5-425c-84c7-1e60a248cbaf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java学习/Java学习笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java学习/Java学习笔记.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HH_STUDY/bean/Resume.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HH_STUDY/bean/Resume.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HH_STUDY/sys/resumeSys.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HH_STUDY/sys/resumeSys.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,11 +49,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HH_STUDY-master" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -92,7 +97,11 @@
       <workItem from="1593737488686" duration="263000" />
       <workItem from="1593737765988" duration="676000" />
       <workItem from="1593767568266" duration="194000" />
-      <workItem from="1593777219949" duration="4638000" />
+      <workItem from="1593777219949" duration="5933000" />
+      <workItem from="1593866793418" duration="4148000" />
+      <workItem from="1593915361593" duration="1442000" />
+      <workItem from="1593917116856" duration="763000" />
+      <workItem from="1594027189573" duration="1788000" />
     </task>
     <servers />
   </component>
@@ -136,33 +145,33 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="525" y="212" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1593777380575" />
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1593696057867">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1594028253924">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1593696057867" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1593782076821">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1594028253924" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1593787449945">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1593782076821" />
-    <state width="1493" height="394" key="GridCell.Tab.0.bottom" timestamp="1593784446177">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1593787449945" />
+    <state width="1493" height="121" key="GridCell.Tab.0.bottom" timestamp="1594028978432">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="394" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593784446177" />
-    <state width="1493" height="394" key="GridCell.Tab.0.center" timestamp="1593784446177">
+    <state width="1493" height="121" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594028978432" />
+    <state width="1493" height="121" key="GridCell.Tab.0.center" timestamp="1594028978432">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="394" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593784446177" />
-    <state width="1493" height="394" key="GridCell.Tab.0.left" timestamp="1593784446177">
+    <state width="1493" height="121" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594028978432" />
+    <state width="1493" height="121" key="GridCell.Tab.0.left" timestamp="1594028978432">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="394" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593784446177" />
-    <state width="1493" height="394" key="GridCell.Tab.0.right" timestamp="1593784446177">
+    <state width="1493" height="121" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594028978432" />
+    <state width="1493" height="121" key="GridCell.Tab.0.right" timestamp="1594028978432">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="394" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593784446177" />
-    <state x="270" y="56" key="SettingsEditor" timestamp="1593694971176">
+    <state width="1493" height="121" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594028978432" />
+    <state x="308" y="77" key="SettingsEditor" timestamp="1593917055360">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1593694971176" />
+    <state x="308" y="77" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1593917055360" />
   </component>
 </project>

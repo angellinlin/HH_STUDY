@@ -12,6 +12,9 @@
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
         <!-- 为生成的Java模型创建一个toString方法 -->
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <!-- 覆盖已存在的xml-->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
+
         <!--可以自定义生成model的代码注释-->
         <commentGenerator type="com.spdb.hrsys.mbg.CommentGenerator">
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
@@ -35,7 +38,7 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.spdb.hrsys.mbg.mapper"
                              targetProject="src\main\java"/>
         <!--生成全部表tableName设为%-->
-        <table tableName="%" catalog="root">
+        <table tableName="%">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
     </context>

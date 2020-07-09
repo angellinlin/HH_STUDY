@@ -20,3 +20,4 @@
 | 发送异步消息 |          |
 | Spring集成   |          |
 
+问题记录博客：https://blog.csdn.net/Timber666

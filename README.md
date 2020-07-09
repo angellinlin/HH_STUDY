@@ -1,39 +1,62 @@
-**进度日期：2020-6-11**
+**till：2020-7-9**
 
 <table>
     <tr>
-        <td bgcolor="oldlace">阶段</td>
-        <td bgcolor="oldlace">内容</td>
-        <td bgcolor="oldlace">进度</td>
+        <td bgcolor="oldlace">Phase</td>
+        <td bgcolor="oldlace">Content</td>
+        <td bgcolor="oldlace">Progress</td>
     </tr>
     <tr>
-        <td bgcolor="white" rowspan="3">Phase 1</td>
-        <td bgcolor="white">Java基础</td>
+        <td bgcolor="white" rowspan="3">Standalone</td>
+        <td bgcolor="white">Memory</td>
         <td bgcolor="white"><font size=4 color="green"><b>√</b></font></td>
     </tr>
     <tr>
-        <td bgcolor="white">多线程</td>
-        <td bgcolor="white"><font size=4 color="red"><b>×</b></font></td>
+        <td bgcolor="white">File IO(txt/Serialization)</td>
+        <td bgcolor="white"><font size=4 color="green"><b>√</b></font></td>
     </tr>
     <tr>
-        <td bgcolor="white">网络编程</td>
+        <td bgcolor="white">JDBC</td>
+        <td bgcolor="white"><font size=4 color="green"><b>√</b></font></td>
+    </tr>
+</table>
+
+​    
+
+<table>
+    <tr>
+        <td bgcolor="oldlace">Phase</td>
+        <td bgcolor="oldlace">Content</td>
+        <td bgcolor="oldlace">Progress</td>
+    </tr>
+    <tr>
+        <td bgcolor="white" rowspan="3">Phase 1</td>
+        <td bgcolor="white">Java Base</td>
+        <td bgcolor="white"><font size=4 color="green"><b>√</b></font></td>
+    </tr>
+    <tr>
+        <td bgcolor="white">Multithreading</td>
+        <td bgcolor="white"><font size=4 color="green"><b>√</b></font></td>
+    </tr>
+    <tr>
+        <td bgcolor="white">Network programming</td>
         <td bgcolor="white"><font size=4 color="green"><b>√</b></font></td>
     </tr>
     <tr>
         <td bgcolor="ivory" rowspan="8">Phase 2</td>
-        <td bgcolor="ivory">Java高级</td>
+        <td bgcolor="ivory">Java Pro</td>
         <td bgcolor="ivory"><font size=4 color="red"><b>×</b></font></td>
     </tr>
     <tr>
-        <td bgcolor="ivory">设计模式</td>
+        <td bgcolor="ivory">Design patterns</td>
         <td bgcolor="ivory"><font size=4 color="green"><b>√</b></font></td>
     </tr>
     <tr>
-        <td bgcolor="ivory">MySQL基础</td>
+        <td bgcolor="ivory">MySQL Base</td>
         <td bgcolor="ivory"><font size=4 color="green"><b>√</b></font></td>
     </tr>
     <tr>
-        <td bgcolor="ivory">MySQL底层</td>
+        <td bgcolor="ivory">MySQL Inside</td>
         <td bgcolor="ivory"><font color="lightskyblue"><b>Learning...</b></font></td>
     </tr>
     <tr>
@@ -49,7 +72,7 @@
         <td bgcolor="ivory"><font size=4 color="green"><b>√</b></font></td>
     </tr>
     <tr>
-        <td bgcolor="ivory">SpringBoot项目实践</td>
+        <td bgcolor="ivory">SpringBoot Practice</td>
         <td bgcolor="ivory"><font color="lightskyblue"><b>Learning...</b></font></td>
     </tr>
     <tr>
@@ -58,4 +81,6 @@
         <td bgcolor="honeydew"><font size=4 color="red"><b>×</b></font></td>
     </tr>
 </table>
+
+
 

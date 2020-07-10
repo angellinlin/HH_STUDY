@@ -4,7 +4,9 @@
 | --------------------- | ---- |
 | 基于内存存储的HR系统  | ✔︎    |
 | 基于TXT存储的HR系统   | ✔︎    |
-| 基于MYSQL存储的HR系统 |      |
+| 基于MYSQL存储的HR系统 | ✔︎    |
+
+过程问题记录博客：https://blog.csdn.net/Timber666
 
 ## Spring 实战项目（Taco Cloud）
 
@@ -20,4 +22,3 @@
 | 发送异步消息 |          |
 | Spring集成   |          |
 
-问题记录博客：https://blog.csdn.net/Timber666

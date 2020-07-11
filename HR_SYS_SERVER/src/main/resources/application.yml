@@ -22,6 +22,10 @@ redis:
       authCode: "authCode-"
     expire:
         time: 120
+jwt:
+  tokenHeader: Authorization #请求头
+  secret: hrsys #秘钥
+  expiration: 3600 #过期时间
 
 
 #也可以使用-表示多文档块

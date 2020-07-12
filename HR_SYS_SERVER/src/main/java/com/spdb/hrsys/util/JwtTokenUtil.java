@@ -113,8 +113,9 @@ public class JwtTokenUtil {
      *根据用户信息生成Token
      * @return token
      */
-    public String generateToken(){
+    public String generateToken(String username){
         Map<String, Object> claims = new HashMap<>();
+        claims.put(CLAIM_KEY_USERNAME, username);
         claims.put(CLAIM_KEY_CREATED, new Date());
         return generateToken(claims);
     }

@@ -14,7 +14,7 @@ HR系统 服务端
  - 整合MyBatis （连接测试）
  - 整合redis （测试案例：模拟手机验证码）
  - 整合Swagger UI
- 
+ - 整合SpringSecurity和JWT实现用户认证和授权
 一些问题
 ===
  * 如果执行两次Generator生成代码时，xml并不会覆盖原来的内容，而是会在原来的基础上再生成一份------>解决

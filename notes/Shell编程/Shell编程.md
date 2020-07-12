@@ -120,11 +120,151 @@
 
 ## 8.流程控制
 
-## 9.读取控制台输入
+### 8.1 if判断
+
+* 基本语法
+
+  * ```
+    if [ 条件判断式 ]； then
+    	程序
+    fi
+    ```
+
+  * ```
+    if [ 条件判断式 ]
+    then
+    	程序
+    elif [ 条件判断式 ]
+    then
+    	程序
+    fi
+    ```
+
+  * 注意：条件判断式，中括号和条件判断式之间必须有空格
+
+* 案例
+
+  * ![image-20200712100442378](E:\Code\Git\HH_STUDY\notes\Shell编程\image-20200712100442378.png)
+
+### 8.2 case语句
+
+* 基本语法
+
+  ```
+  case $变量名 in
+  "值1"）
+  	如果变量的值等于值1，则执行程序1
+  ;;
+  "值2")
+  	如果变量的值等于值2，则执行程序2
+  ;;
+  ....
+  *)
+  	如果变量的值都不是以上的值，则执行此程序
+  ;;
+  esac
+  ```
+
+* 案例
+
+  * ![image-20200712101425473](E:\Code\Git\HH_STUDY\notes\Shell编程\image-20200712101425473.png)
+
+### 8.3 for循环
+
+* 基本语法1
+
+  ```
+  for 变量 in 值1 值2 值3...
+  do
+  	程序
+  done
+  ```
+
+  ![image-20200712103354481](E:\Code\Git\HH_STUDY\notes\Shell编程\image-20200712103354481.png)
+
+  ![image-20200712103439384](E:\Code\Git\HH_STUDY\notes\Shell编程\image-20200712103439384.png)
+
+* 基本语法2
+
+  ```
+  for((初始值;循环控制条件;变量变化))
+  do
+  	程序
+  done
+  ```
+
+  
+
+* ![image-20200712203621533](E:\Code\Git\HH_STUDY\notes\Shell编程\image-20200712203621533.png)
+
+### 8.4 while循环
+
+* 基本语法
+
+```
+while [ 条件判断式 ]
+do
+	程序
+done
+```
+
+* 应用实例
+  * ![image-20200712204131507](E:\Code\Git\HH_STUDY\notes\Shell编程\image-20200712204131507.png)
+
+## 9.使用read读取控制台输入
+
+* 基本语法
+  * read(选项)(参数)
+  * 选项
+    * -p 指定读取值时的提示符
+    * -t 指定读取值时等待的时间(秒)，如果没有在指定的时间内输入，就不再等待了
+  * 参数
+    * 变量 指定读取值的变量名
+* 案例
+  * ![image-20200712205132210](E:\Code\Git\HH_STUDY\notes\Shell编程\image-20200712205132210.png)
 
 ## 10.系统函数简介
 
+* 函数介绍
+  * basename基本语法
+    * 功能：返回完整路径最后/的部分，常用于获取文件名
+    * basename [pathname ][suffix]
+    * basename [string][suffix]
+    * basename命令会删掉所有的前缀包括最后一个('/')字符，然后将字符串显示出来
+    * 选项：suffix为后缀，如果suffix被指定了，basename会将pathname或string中的suffix去掉
+  * 案例
+    * ![image-20200712205749370](E:\Code\Git\HH_STUDY\notes\Shell编程\image-20200712205749370.png)
+  * dirname基本语法
+    * 功能：返回完整路径最后/的前面的部分，常用于返回路径部分
+    * dirname 文件绝对路径(功能描述：从给定的包含绝对路径的文件名中去除文件名(非目录部分)，然后返回剩下的路径(目录部分))
+  * 案例
+    * ![image-20200712210126414](E:\Code\Git\HH_STUDY\notes\Shell编程\image-20200712210126414.png)
+
 ## 11.自定义函数
 
-## 12.定时维护数据库
+* 基本语法
+
+```
+[ function ] funname[()]
+{
+	Action;
+	[return int;]
+}
+```
+
+* 调用直接写函数名：funcname [值]
+* 案例
+  * ![image-20200712210921427](E:\Code\Git\HH_STUDY\notes\Shell编程\image-20200712210921427.png)
+
+## 12.综合案例
+
+* 需求分析
+  * 每天凌晨两点备份数据库testDB到/data/backup/dp
+  * 备份开始和备份结束都能够给出相应提示信息
+  * 备份后的文件要求以备份时间为文件名，并打包成.tar.gz的形式
+  * 在备份的同时，检查是否有10天前备份的数据库文件，如果有就将其删除
+* ![image-20200712213916257](E:\Code\Git\HH_STUDY\notes\Shell编程\image-20200712213916257.png)
+* ![image-20200712213937613](E:\Code\Git\HH_STUDY\notes\Shell编程\image-20200712213937613.png)
+
+
 

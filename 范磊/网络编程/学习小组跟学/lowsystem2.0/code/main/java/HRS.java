@@ -4,7 +4,7 @@ import bean.*;
 
 public class HRS {
 
-    OperateInTxt operate = new OperateInTxt();
+    PersistenceStorageInTxt operate = new PersistenceStorageInTxt();
 
     private Scanner input = new Scanner(System.in);
 
@@ -42,7 +42,7 @@ public class HRS {
                 }
             } catch (Exception e) {
                 System.out.println("输入错误,请重新输入");
-                break base;
+                new HRS();
 
                 // 跳出存在问题
             }

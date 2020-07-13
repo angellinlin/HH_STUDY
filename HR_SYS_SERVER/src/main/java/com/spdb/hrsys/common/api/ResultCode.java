@@ -1,5 +1,8 @@
 package com.spdb.hrsys.common.api;
 
+/**
+ * 枚举常见的操作码
+ */
 public enum ResultCode implements Code{
     SUCCESS(200, "操作成功"),
     FAILED(500, "操作失败");

@@ -34,6 +34,10 @@ public class Main {
         }
         System.out.println("*****您已退出员工管理系统*****");
     }
+
+    /**
+     * 添加员工
+     */
     public static void addEmployee() {
         System.out.println("*****欢迎来到添加员工界面*****");
         Scanner sc = new Scanner(System.in);
@@ -58,6 +62,10 @@ public class Main {
             System.out.println("添加员工失败");
         }
     }
+
+    /**
+     * 删除员工
+     */
     public static void deleteEmployee() {
         Scanner sc = new Scanner(System.in);
         System.out.println("*****欢迎来到删除员工界面*****");
@@ -71,6 +79,10 @@ public class Main {
             System.out.println("没有找到该员工，无法删除");
         }
     }
+
+    /**
+     * 修改员工
+     */
     public static void updateEmployee() {
         System.out.println("*****欢迎来到修改员工界面*****");
         Scanner sc = new Scanner(System.in);
@@ -119,6 +131,10 @@ public class Main {
             }
         }
     }
+
+    /**
+     * 查询员工
+     */
     public static void searchEmployee() {
         System.out.println("*****欢迎来到查询员工界面*****");
         Scanner sc = new Scanner(System.in);

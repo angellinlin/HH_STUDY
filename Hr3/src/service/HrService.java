@@ -140,7 +140,7 @@ public class HrService {
             }
         }
         else {
-            System.out.println("没有找到姓名与"+Name+"有关的学生");
+            System.out.println("没有找到姓名内包含"+Name+"的学生");
         }
     }
 

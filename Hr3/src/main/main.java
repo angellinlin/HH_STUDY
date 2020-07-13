@@ -1,6 +1,6 @@
 package main;
 
-import loadandsaveData.DataOperate;
+
 import model.Resume;
 import service.HrService;
 
@@ -11,7 +11,6 @@ public class main {
     public static void main(String[] args) {
         ArrayList<Resume> resumeList=new ArrayList<Resume>();
         Scanner input = new Scanner(System.in);
-        DataOperate.loadData(resumeList);//下载所有简历
         HrService hrService=new HrService();
         while(true)
         {
@@ -41,14 +40,13 @@ public class main {
                     break;
                 case 5:
                     flag=true;
-                    DataOperate.saveData(resumeList);
                     break;
                 default:
                     System.out.println("输入错误，请重新输入");
                     break;
             }
             if(flag){
-                System.out.println("您已退出图书管理系统");
+                System.out.println("您已退出HR招聘系统");
                 break;
             }
 

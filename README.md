@@ -1,6 +1,9 @@
-1、强化对面向对象中七种软件设计原则的学习和认知
-2、结合算法题巩固Java基础
-3、进一步学习和巩固Java中的23种设计模式，争取能够达到灵活应用，提高代码的复用性和可维护性
-4、在学习过程中进一步强化对反射等知识的掌握，解决一些实际问题
+IDEA的常用快捷键
 
-实际需求：执行某个类中全部以test开头的无参数无返回值的非静态方法(反射)
+alt + insert: 生成一些常用的方法，getAndSet，toString，构造，equals(), hashCode()等
+shift + enter：直接换行
+ctrl + shift + f10：开始run
+ctrl + P: 查看方法需要的参数
+Ctrl + Alt + L：格式化代码
+ctrl + enter: 处理代码报错
+ctrl + alt + t：对选中的代码进行处理，如try/catch, if, while等

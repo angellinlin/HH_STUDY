@@ -7,7 +7,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.sql.Timestamp;
 
 @Rollback(false) //关闭数据回滚
@@ -73,5 +76,10 @@ class ResumeApplicationTests {
             System.out.println(response.getMessage());
         }
     }
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+
+    @Transactional
 
 }

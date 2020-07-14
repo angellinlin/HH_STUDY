@@ -2,7 +2,6 @@ package com.spdb;
 
 import com.spdb.common.ServerResponse;
 import com.spdb.pojo.Resume;
-import com.spdb.service.IResumeService;
 import com.spdb.service.impl.IResumeServiceImpl;
 
 import java.util.ArrayList;
@@ -28,6 +27,7 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
+        Main main = new Main();
         Resume resume1 = new Resume( "fuaowei",
                                     "420621199506127746",
                                     "scu",
@@ -60,10 +60,10 @@ public class Main {
         resumeArrayList.add(resume3);
 
         //文件导入简历
-        resumeArrayList = IResumeServiceImpl.loadResumes(resumePath);
+        resumeArrayList = IResumeServiceImpl.loadResumesByTxt(resumePath);
 
         //根据输入选项进行业务操作
-        doSomething2Resume();
+        main.doSomething2Resume();
 
         iResumeService.saveResumeList(resumePath,resumeArrayList);
 
@@ -91,37 +91,37 @@ public class Main {
 
             switch (choice){
                 case 1:{
-                    Resume resume = getResumeInformation(1);
+                    Resume resume = getResumeInformation(1,scanner);
                     ServerResponse serverResponse = iResumeService.createResume(resume,resumeArrayList);
                     if (serverResponse.getStatus() < 0){
                         System.out.println(serverResponse.getMessage());
                     }else{
-                        System.out.println("resume has been created!\n");
+                        System.out.println("resume has been created!");
                     }
                     break;
                 }
                 case 2:{
-                    Resume resume = (Resume) IResumeServiceImpl.getUserResumeById(2,resumeArrayList).getData();
+                    Resume resume = (Resume) IResumeServiceImpl.getUserResumeById(2,resumeArrayList,scanner).getData();
                     ServerResponse serverResponse = iResumeService.deleteResume(resume,resumeArrayList);
                     if (serverResponse.getStatus() < 0){
                         System.out.println(serverResponse.getMessage());
                     }else{
-                        System.out.println("resume has been deleted!\n");
+                        System.out.println("resume has been deleted!");
                     }
                     break;
                 }
                 case 3:{
-                    Resume resume = getResumeInformation(3);
+                    Resume resume = getResumeInformation(3,scanner);
                     ServerResponse serverResponse = iResumeService.updateResume(resume,resumeArrayList);
                     if (serverResponse.getStatus() < 0){
                         System.out.println(serverResponse.getMessage());
                     }else{
-                        System.out.println("resume has been update!\n");
+                        System.out.println("resume has been update!");
                     }
                     break;
                 }
                 case 4:{
-                    String id = (String)IResumeServiceImpl.getUserResumeById(4,resumeArrayList).getData();
+                    String id = (String)IResumeServiceImpl.getUserResumeById(4,resumeArrayList,scanner).getData();
                     ServerResponse serverResponse = iResumeService.selectResume(id,resumeArrayList);
                     if (serverResponse.getStatus() < 0){
                         System.out.println(serverResponse.getMessage());
@@ -133,7 +133,10 @@ public class Main {
                 }
                 case 5: {
                     System.out.println("bye bye!");
+                    scanner.close();
+                    System.exit(1);
                     break;
+
                 }
                 default:
                     System.out.println("please enter the right option!");

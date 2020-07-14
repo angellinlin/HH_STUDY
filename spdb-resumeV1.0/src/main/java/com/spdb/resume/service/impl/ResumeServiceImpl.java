@@ -12,6 +12,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 
@@ -30,6 +31,7 @@ public class ResumeServiceImpl implements IResumeService {
     private ResumeMapper resumeMapper;
 
     @Override
+    @Transactional
     public ServerResponse<String> createResume(Resume resume) {
         //1、测试身份证号码、电话、邮箱是否可用
         if (!checkResume(resume.getIdCardNumber(),Const.ID_CARD_NUMBER).isSuccess()){
@@ -53,6 +55,7 @@ public class ResumeServiceImpl implements IResumeService {
     }
 
     @Override
+    @Transactional
     public ServerResponse<String> deleteResume(Resume resume) {
         //1、根据id查询是否有该简历
         if (!checkResume(resume.getId().toString(),Const.ID).isSuccess()){
@@ -73,6 +76,7 @@ public class ResumeServiceImpl implements IResumeService {
     }
 
     @Override
+    @Transactional
     public ServerResponse<String> updateResume(Resume resume) {
         //1、查找简历是否存在
         if (!checkResume(resume.getId().toString(),Const.ID).isSuccess()){
@@ -92,6 +96,7 @@ public class ResumeServiceImpl implements IResumeService {
     }
 
     @Override
+    @Transactional
     public ServerResponse<Resume> inquireResume(Integer id) {
         //1、校验id
         if (id == null){

@@ -1,14 +1,18 @@
 package com.spdb.service.impl;
-
 import com.spdb.common.ResumeStatusCode;
 import com.spdb.common.ServerResponse;
+import com.spdb.dao.impl.ResumeMapper;
 import com.spdb.pojo.Resume;
 import com.spdb.service.IResumeService;
+import com.spdb.util.DataSourceUtil;
 import com.spdb.util.IResumeCheck;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.*;
+
 import java.util.ArrayList;
 import java.util.Scanner;
+
 
 
 /**
@@ -19,6 +23,12 @@ import java.util.Scanner;
  * @Description: 简历服务 增删改查
  */
 public class IResumeServiceImpl implements IResumeService {
+
+    @Autowired
+    DataSourceUtil dataSourceUtil;
+
+    @Autowired
+    ResumeMapper resumeMapper;
 
     public ServerResponse<Resume> createResume(Resume resume, ArrayList<Resume> resumeArrayList) {
 
@@ -54,7 +64,6 @@ public class IResumeServiceImpl implements IResumeService {
     }
 
     public ServerResponse<String> deleteResume(Resume resume,ArrayList<Resume> resumeArrayList) {
-
 
         //1、根据id查询是否有该简历
         if (!checkResume(resume,resumeArrayList,
@@ -116,6 +125,33 @@ public class IResumeServiceImpl implements IResumeService {
 
     }
 
+    @Override
+    public ServerResponse<String> createResumeByMysql(Resume resume) {
+        if (resume == null){
+            return ServerResponse.createByErrorMessage("简历为空！");
+        }
+        //1、插入简历到数据库
+        int result = resumeMapper.createResume(resume);
+
+
+        return null;
+    }
+
+    @Override
+    public ServerResponse<String> deleteResumeByMysql(String id_card_num) {
+        return null;
+    }
+
+    @Override
+    public ServerResponse<String> updateResumeByMysql(String id_card_num) {
+        return null;
+    }
+
+    @Override
+    public ServerResponse<String> selectResumeByMysql(String id_card_num) {
+        return null;
+    }
+
     /**
      *@Author: A wei
      *@Description 查询简历是否在人才库
@@ -152,7 +188,7 @@ public class IResumeServiceImpl implements IResumeService {
      *@return
      *@param
      **/
-    public static Resume getResumeInformation(int status){
+    public static Resume getResumeInformation(int status,Scanner scanner){
         if(status == 1){
             System.out.println("-------welcome to create resume-------");
             System.out.println("please type your: name、id、school、major、sex、phone、email");
@@ -160,7 +196,7 @@ public class IResumeServiceImpl implements IResumeService {
             System.out.println("-------welcome to update resume-------");
             System.out.println("please type your name、id、school、major、sex、phone、email");
         }
-        Scanner scanner = new Scanner(System.in);
+       //Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
         String id = scanner.nextLine();
         String school = scanner.nextLine();
@@ -169,8 +205,8 @@ public class IResumeServiceImpl implements IResumeService {
         int sex = "男".equals(sexStr)? 0:1;
         String phone = scanner.nextLine();
         String email = scanner.nextLine();
-
-        scanner.close();
+        scanner.nextLine();
+        //scanner.close();
 
         Resume result = new Resume(name,id,school,major,sex,phone,email, ResumeStatusCode.NOTAPPLY.getCode());
 
@@ -182,22 +218,22 @@ public class IResumeServiceImpl implements IResumeService {
      *@return
      *@param
      **/
-    public static ServerResponse getUserResumeById(int status,ArrayList<Resume> resumeArrayList){
+    public static ServerResponse getUserResumeById(int status,ArrayList<Resume> resumeArrayList,Scanner scanner){
         switch (status){
             case 2:{
                 System.out.println("-------welcome to delete resume-------");
                 System.out.println("please type your: id");
-                Scanner scanner = new Scanner(System.in);
+                scanner = new Scanner(System.in);
                 String id = scanner.nextLine();
-                scanner.close();
+                //scanner.close();
                 return ServerResponse.createBySuccess(selectResumeById(id,resumeArrayList));
             }
             case 4:{
                 System.out.println("-------welcome to inquire resume-------");
                 System.out.println("please type your: id");
-                Scanner scanner = new Scanner(System.in);
+                scanner = new Scanner(System.in);
                 String id = scanner.nextLine();
-                scanner.close();
+                //scanner.close();
                 return ServerResponse.createBySuccess(id);
             }
         }
@@ -243,14 +279,13 @@ public class IResumeServiceImpl implements IResumeService {
         bufferedWriter.close();
         return true;
     }
-
     /**
      *@Author: A wei
      *@Description 从文件中读取数据
      *@return ArrayList<Resume>
      *@param
      **/
-    public static ArrayList<Resume> loadResumes(String path){
+    public static ArrayList<Resume> loadResumesByTxt(String path){
         //1、测试路径
         if (path.isEmpty()){
             System.out.println("路径名不对,请输入正确路径名！");
@@ -283,6 +318,14 @@ public class IResumeServiceImpl implements IResumeService {
         }
         return resumeArrayList;
     }
+    /**
+     *@Author: A wei
+     *@Description 插入数据到数据库
+     *@return
+     *@param
+     **/
+
+
 
 }
 

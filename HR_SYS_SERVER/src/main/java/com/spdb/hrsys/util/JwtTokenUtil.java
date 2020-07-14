@@ -6,6 +6,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -123,11 +124,11 @@ public class JwtTokenUtil {
     /**
      * 验证token是否有效
      * @param token 客户端传入的token
-     * @param user 用户名
+     * @param userDetails
      * @return 是否有效
      */
-    public boolean validateToken(String token, String user){
+    public boolean validateToken(String token, UserDetails userDetails){
         String username = getUserNameFromToken(token);
-        return user.equals(username) && !isTokenExpired(token);
+        return userDetails.getUsername().equals(username) && !isTokenExpired(token);
     }
 }

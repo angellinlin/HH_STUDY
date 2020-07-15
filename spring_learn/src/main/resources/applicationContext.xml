@@ -7,15 +7,38 @@
     <bean id="people" class="com.weihongyu.spring.entity.People" />
 
 
-    <bean id="beforeLog" class="com.weihongyu.spring.proxy.BeforeLog"/>
+    <!--<bean id="beforeLog" class="com.weihongyu.spring.dynamic.BeforeLog"/>-->
+    <bean id="around" class="com.weihongyu.spring.dynamic.Around"/>
 
     <bean id="userService" class="com.weihongyu.spring.proxy.UserServiceImpl"/>
     <bean id="orderService" class="com.weihongyu.spring.proxy.OrderServiceImpl"/>
+    <bean id="userService2" class="com.weihongyu.spring.proxy.a.UserServiceImpl2"/>
 
     <!--AOP编程的配置-->
     <aop:config>
+        <!--切入点表达式-->
+        <!--所有类的所有方法-->
         <aop:pointcut id="pc" expression="execution(* *(..))"/>
 
-        <aop:advisor advice-ref="beforeLog" pointcut-ref="pc"/>
+        <!--所有类的login方法-->
+        <aop:pointcut id="pc1" expression="execution(* login(..))"/>
+
+        <!--所有类的register方法，方法参数为User-->
+        <aop:pointcut id="pc2" expression="execution(* register(com.weihongyu.spring.proxy.User))"/>
+
+        <!--UserServiceImpl类中所有方法-->
+        <aop:pointcut id="pc3" expression="execution(* com.weihongyu.spring.proxy.UserServiceImpl.*(..))"/>
+
+        <!--任意包下的UserServiceImpl类中所有方法，通配包名-->
+        <aop:pointcut id="pc4" expression="execution(* *..UserServiceImpl.*(..))"/>
+
+        <!--com.weihongyu.spring.proxy包下的所有类的所有方法，注意只有当前包下，不能是子包内的-->
+        <aop:pointcut id="pc5" expression="execution(* com.weihongyu.spring.proxy.*.*(..))"/>
+
+        <!--com.weihongyu.spring.proxy包下的所有类的所有方法，包括子包下的-->
+        <aop:pointcut id="pc6" expression="execution(* com.weihongyu.spring.proxy..*.*(..))"/>
+
+
+        <aop:advisor advice-ref="around" pointcut-ref="pc6"/>
     </aop:config>
 </beans>

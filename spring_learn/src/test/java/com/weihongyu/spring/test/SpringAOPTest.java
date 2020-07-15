@@ -1,28 +1,17 @@
 package com.weihongyu.spring.test;
 
-import com.weihongyu.spring.entity.People;
 import com.weihongyu.spring.proxy.*;
+import com.weihongyu.spring.proxy.a.UserService2;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * @Auther: weihongyu
- * @Date: 2020/7/13 17:18
- * @Description:测试类
+ * @Date: 2020/7/15 10:16
+ * @Description:AOP相关测试
  */
-public class SpringTest {
-
-    /**
-     * @Description：spring工厂的创建
-     */
-    @Test
-    public void test1() throws Exception {
-
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("./applicationContext.xml");
-        People people = (People) ctx.getBean("people");
-        System.out.println("people = " + people);
-    }
+public class SpringAOPTest {
 
     /**
      * @Description:静态代理类测试
@@ -50,6 +39,9 @@ public class SpringTest {
         OrderService orderService = (OrderService) ctx.getBean("orderService");
         orderService.showOrder();
 
-    }
+        UserService2 userService2 = (UserService2) ctx.getBean("userService2");
+        userService2.login();
 
+
+    }
 }

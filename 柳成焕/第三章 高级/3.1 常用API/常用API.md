@@ -1,5 +1,3 @@
-## 第一节 常用API
-
 JDK提供的类的集合，是程序员的字典。
 
  
@@ -19,12 +17,12 @@ API使用步骤：
 6.学习构造方法
 
 7.使用成员方法。
- 
 
-### 一、Scanner类
+
+### 3.1.1 Scanner类
 
 Scanner类的功能，可以实现键盘输入数据，到程序当中。
- 
+
  引用类型的一般使用步骤：
  （1）导包：*ipmort* *包路径.**类名称;*
  如果需要使用的目标类与当前类位于统一包下，则可省略导包语句不写。
@@ -58,11 +56,11 @@ int max = temp > c ? temp : c;
  
 ```
 
-### 二、匿名对象
+### 3.1.2 匿名对象
 
 创建对象的标准格式：*类名称* *对象名=new* *类名称（）;*
  匿名对象就是只有右边的对象，没有左边的名字和赋值运算符: *new* *类名称();*
- 
+
  注意事项：匿名对象只能使用唯一的一次，下次再用不得不再创建一个对象。
  使用建议：如果确定有一个对象只需要使用唯一的一次，就可以使用匿名对象。
 
@@ -72,7 +70,7 @@ int max = temp > c ? temp : c;
 
  
 
-### 三、Random类
+### 3.1.3Random类
 
 Random类用来生成随机数字，使用起来也是三个步骤：
  1.导包 *import java.util.Random;*
@@ -107,7 +105,7 @@ Random类用来生成随机数字，使用起来也是三个步骤：
 
  
 
-### 四、集合类ArrayList
+### 3.1.4 集合类ArrayList
 
 （一）基本介绍
 
@@ -115,7 +113,7 @@ Random类用来生成随机数字，使用起来也是三个步骤：
  对于ArrayList来说，有一个<E>，代表泛型。
  泛型，也就是装在集合中的所有元素，全都是统一的什么类型。
  注意：泛型只能是引用类型，不能是基本类型。
- 
+
  注意事项：
  对于ArrayList来说，直接发音得到的不是地址值，而是内容。
  如果内容是空，得到的是空的中括号：[]
@@ -142,11 +140,11 @@ System.out.println(list);  //[123, 迪丽热巴, 古力娜扎]
  *public boolean add(E e);*  //向集合中添加元素，参数类型与泛型一致，返回值代表添加是否成功。
  备注：对于ArrayList集合来说，add添加动作一定是成功的，所以返回值可用可不用。
  但是对于其他集合来说，add添加动作不一定成功。
- 
+
  public E get(int index); //从集合中获取元素，参数是索引编号，返回值就是对应位置的元素
- 
+
  public E remove(int index);//从集合中删除元素，参数是索引编号，返回值是被删除掉的元素
- 
+
  public int size();     //获取集合的尺寸长度，返回值是集合中包含的元素个数。
 
  
@@ -162,7 +160,7 @@ System.out.println(list);  //[123, 迪丽热巴, 古力娜扎]
 
 *//**错误写法！泛型只能是引用类型，不能是基本类型
  //ArrayList<int>list=new ArrayList<int>();
- 
+
 \* 如果希望向集合ArrayList集合中存储基本数据类型，必须使用基本类型对应的包装类。*
 \* *基本类型*   *包装类（引用类型，包装类都位于java.lang**包下）
  byte    Byte
@@ -232,7 +230,7 @@ for (int i = 0; i < list.size(); i++) {
 *题目3**：
 \* *用一个大集合存入20**个随机数字，然后筛选其中的偶数元素，放到小集合中。
 \* *要求使用自定义的方法实现筛选。
- 
+
 \* *思路：
  1.**定义一个大集合和一个小集合
  2.**定义一个随机类Random r**，大集合中存入20**个随机数字listA.add r.nextInt()
@@ -243,14 +241,14 @@ for (int i = 0; i < list.size(); i++) {
 
  
 
-### 五、字符串类String
+### 3.1.5 字符串类String
 
 （一）概述和特点
 
 java.lang.String类代表字符串
  API中说，Java程序中的所有字符串字面值（如 "abc" ）都作为此类的实例实现。
  其实就是说，程序中所有的双引号字符串，都是String类的对象（就算没有new，也照样是）
- 
+
  字符串的特点：
  1.字符串的内容永不可变【重点】 ---字符串是常量；它们的值在创建之后不能更改。
  2.正是因为字符串不可改变，所以字符串是可共享使用的。
@@ -273,7 +271,7 @@ java.lang.String类代表字符串
 （三）字符串的常量池
 
 字符串常量池，程序中直接写上的双引号字符串，就在字符串常量池中。
- 
+
  对于基本类型来说，==是进行数值比较。
  对于引用类型来说，==是进行【地址值】的比较。
 
@@ -305,7 +303,7 @@ System.out.println(str3==str2);  //false
  3.如果比较双方一个常量一个变量，推荐把常量字符串写前面。*
 \* *推荐：  "Hello".equals(str);
 \* *不推荐： str.equals("Hello");
- 
+
  public boolean equalsIgnoreCase(String str);* *忽略英文字母大小写，进行内容比较*
 
  
@@ -412,7 +410,7 @@ for (int i = 0; i < array3.length; i++) {
 *题目1**：
 \* *定义一个方法，把数组[1,2,3]**按照指定格式拼接成一个字符串，格式参照如下：
  [word1#word2#word3]
- 
+
 \* *思路：
  1.int**数组
  2.**方法，
@@ -444,7 +442,7 @@ public static String fromArrayToString(int[] array) {
 
 *题目2**：键盘输入一个字符串，并且统计其中各种字符出现的次数。
 \* *种类有：大写字母、小写字母、数字、其他。
- 
+
 \* *思路：
  1.**键盘输入Scanner
  2.**定义一个字符串存键盘输入sc.next();
@@ -485,7 +483,7 @@ System.out.println("其他字符个数为："+num4);
 
  
 
-### 六、static关键字
+### 3.1.6 static关键字
 
 （一）static概述
 
@@ -500,14 +498,14 @@ System.out.println("其他字符个数为："+num4);
 （二）staic关键字修饰成员
 
 一旦使用static修饰成员方法，那么这就成为了静态方法，静态方法不属于对象，而是属于类的。
- 
+
  如果没有static关键字，那么必须首先创建对象，然后通过对象才能使用它。
  如果有了static关键字，那么必须不需要创建对象，直接通过类名称就能使用它。
- 
+
  无论是成员变量还是成员方法，如果有了static，都推荐使用类名称进行调用。
  静态变量：*类名称**.**静态变量*
  静态方法：*类名称**.**静态方法()
- 
+
 *
 
 ```
@@ -569,19 +567,19 @@ public static void methodStatic() {
  }
 \* 特点：当第一次用到本类时，静态代码块执行唯一的一次。
  静态内容总是优先于非讲台，所以静态代码块比构造方法先执行。
- 
+
  静态代码块的典型用途：
  用来一次性地对静态成员变量进行赋值。
 
  
 
-### 七、数组工具类Arrays
+### 3.1.7 数组工具类Arrays
 
 *java.util.Arrays*是一个与数组相关的工具类，里面提供了大量静态方法，用来实现数组常见的操作。
  *
  public static String toString(**数组);* 将参数数组变成字符串，按照默认格式[元素1，元素2，……]*
  public static void  sort(**数组);*   按照默认升序对数组的元素进行排序*
- 
+
 \* 备注：
  1.如果是数值，sort默认按照升序从小到大；
  2.如果是字符串，sort默认按照字母升序；
@@ -597,7 +595,7 @@ System.out.println(Arrays.toString(arr2));  //[asfd, hnsdkjfs, sdhkjs]
  
 
 练习：*请使用**Arrays**相关的API**，将一个随机字符串中的所有字符升序排列，并倒序打印。
- 
+
 \* *思路：
  1.**升序排列 Arrays.sort(**数组)
  2.**将字符串转为字符数组str.toCharArray()*
@@ -614,7 +612,7 @@ for (int i = array.length - 1; i >= 0; i--) {
 
  
 
-### 八、数学工具类Math
+### 3.1.8 数学工具类Math
 
 *java.util,Math*是数学相关的工具类，里面提供了大量的静态方法，完成与数学相关的操作。
  *
@@ -622,13 +620,13 @@ for (int i = array.length - 1; i >= 0; i--) {
  public static double ceil(double num);*  *向上取整12.1 →13
  public static double floor(double num);*  *向下取整12.9 →12
  public static long round(double num);* *四舍五入
- 
+
  Math.PI* *代表近似的圆周率常量。（double**）*
 
  
 
 *题目：计算在-10.8**到5.9**之间，绝对值大于6**或者小于2.1**的整数有多少个？
- 
+
 \* *思路：
  1.**既然确定了范围，for**循环
  2.**起点位置-10.8**可用两种方法转为-10
@@ -652,5 +650,327 @@ for (int i = min; i < max; i++) {
 }
 System.out.println("个数为：" + count);  //9
 ```
+
+###  3.1.9 Object类
+
+\1. *public Str*ing toString(); 返回该对象的字符串表示。该字符串由类名（对象是该类的一个实例）、at 标记符“@”和此对象哈希码的无符号十六进制表示组成。
+
+注：直接打印对象的地址值没有意义，需要重写Object类的toString方法，打印对象的属性。
+
+ 
+
+```
+String str = person.toString();
+System.out.println(str);  //Person{name='啊柳', age=18}
+ 
+```
+
+\2. Person类默认继承了Object类，因此可以用Object类的equals方法。
+ *public boolean equals(Object obj);*  指示其他某个对象是否与此对象“相等”。
+ equals方法源码：*public boolean equals(Object obj) {
+          return (this == obj);
+\*         *}*
+        *参数：Object obj**可以传递任意对象
+        ==**比较运算符，返回的是一个boolean**值，true/false
+\*        *基本数据类型：比较的是值
+\*        *引用数据类型：比较的是两个对象的地址值
+        this**：哪个对象调用的方法，方法中this**就是那个对象。
+        obj**：传递过来的参数*
+
+```
+3. Objects类中的equals方法，也是对两个对象进行比较，防止空指针异常
+源码： public static boolean equals(Object a, Object b) {
+          return (a == b) || (a != null && a.equals(b));
+      }
+String s1=null;
+String s2="ABC";
+//boolean b=s1.equals(s2);  //NullPointerException 
+                     //null是不能调用方法的，否则会出现空指针异常
+boolean b2 =Objects.equals(s1,s2);
+System.out.println(b2);  //false
+ 
+```
+
+### 3.1.10 日期时间类
+
+#### 一、Date类
+
+（一）毫秒的概念和作用
+
+*java.util.Date:*表示日期和时间的类。
+ 类Date：表示特定的瞬间，精确到毫秒。
+ *1**秒=1000**毫秒*
+ 毫秒的作用：可以对时间和日期进行计算。
+   计算从*2020-07-14**到2099-01-01*之间的天数。
+   将日期转换为毫秒计算完毕后，再将毫秒转为日期。
+ 
+ 把日期转换为毫秒：
+     当前日期：*2020-07-14
+\*     时间原点（0毫秒）：*1970* *年 1* *月 1* *日 00:00:00**（英国格林威治）
+\*     计算一共经历了多少毫秒。
+     *System.currentTimeMillis()* //获取当前系统时间到1970年1月1日00.00共经历了多少毫秒
+   注意：中国属于东八区，会把时间增加8小时。
+       1*970* *年 1* *月 1* *日 08:00:00*
+ 
+ 把毫秒转为日期：*
+     1* *天 = 24 × 60 × 60 = 86400* *秒 = 86400000* *毫秒*
+
+ 
+
+（二）Date类的构造方法和成员方法
+
+```
+Date date = new Date();  //无参构造方法
+Date date = new Date(0L); //带参数的构造方法
+public long getTime() 返回自 1970 年 1 月 1 日 00:00:00 GMT 以来此 Date 对象表示的毫秒数
+ 
+```
+
+#### 二、DateFormat类和SimpleDateFormat类
+
+*java.text.Format:*是日期/时间格式化子类的抽象类
+       作用：格式化（日期 -> 文本）、解析（文本-> 日期）
+       成员方法：*
+       String format(Date date)* 将一个 Date 格式化为日期/时间字符串。*
+       Date parse(String source)* 从给定字符串的开始解析文本，以生成一个日期。 *DateFormat*类是一个抽象类，无法直接创建对象使用，可以使用DateFormat的子类。*
+ 
+*
+
+ *java.text.SimpleDateFormat extends DateFormat*
+
+构造方法：*SimpleDateFormat(String pattern)* 用给定的模式和默认语言环境的日期格式符号
+     参数：*String pattern* 传递指定的格式*
+\*     *模式：区分大小写
+\*     y  年
+     M  月
+     d  日
+     H  时
+     m  分
+     s  秒
+ 写对应的模式，会把模式替换为对应的日期和时间。*
+ “yyyy-MM-dd HH:mm:ss"
+\* 注意：模式中的字母不能改变，中间连接的符号可以改变。 
+
+ 
+
+使用Parse方法时，将格式化的字符串解析为Date要注意：
+
+如果字符串和构造方法的模式不一样，那么程序就会抛出异常ParseException
+ 调用了一个抛出了异常的方法，就必须处理这个异常，要么throws继续抛出这个异常（alt+enter选第一个即可），要么try catch自己处理。
+
+```
+/*
+解析
+使用Parse方法，将格式化的字符串解析为Date
+注意：如果字符串和构造方法的模式不一样，那么程序就会抛出异常ParseException
+调用了一个抛出了异常的方法，就必须处理这个异常，要么throws继续抛出这个异常，要么try catch自己处理。
+ */
+private static void demo02() throws ParseException {
+    SimpleDateFormat simFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    Date date=new Date();
+    date=simFormat.parse("2020-07-14 18:35:23");
+    System.out.println(date);
+}
+
+/*
+使用DateFormat类中的format方法格式化日期。
+步骤：
+1.创建SimpleDateFormat对象，构造方法传递指定格式
+2.调用SimpleDateFormat的format方法，把Date日期转化为符合模式的字符串
+*/
+private static void demo01() {
+    SimpleDateFormat simFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    String str = simFormat.format(new Date());
+    System.out.println(str);
+}
+```
+
+ 
+
+三、计算一个人出生了多少天
+
+ 
+
+### 3.1.11 Calendar类
+
+一、java.util.Calendar类：日历类
+ 1、是一个抽象类，里面提供了很多操作日历字段的方法（YEAR,MONTH,DAY_OF_MONTH,HOUR）
+ 2、无法直接创建对象使用，但其有一个静态方法getInstance(),其返回一个Calendar子类对象。
+ *static Calendar getInstance()*使用默认时区和语言环境获得了一个日历
+
+ 
+
+二、常用成员方法
+
+*public int get(int field)*返回给定日历字段的值。(YEAR,MONTH,DAY_OF_MONTH,HOUR,...)
+ *public final void set(int field,int value)*设置日历字段值。
+ *public abstract void add(int field,int amount)*根据日历的规则，为给定的日历字段添加或减去指定的时间量。(正数：增加，负数：减少)
+ *public final Date getTime()*返回一个表示此 Calendar 时间值（从历元至现在的毫秒偏移量）的 Date 对象。
+
+ 
+
+### 3.1.12 System类
+
+一、两个常用方法
+
+*public static long currentTimeMillis()*   *返回以毫秒为单位的当前时间
+ public static void arraycopy(Object src,*     *源数组
+               int srcPos,*  *源数组的起始位置（索引）
+               Object dest,*  *目标数组
+               int destPos,*  *目标数组起始位置
+               int length)*  *要复制的数组元素数量
+\*    *从指定源数组中复制一个数组*
+
+ 
+
+二、练习
+
+1.计算打印1-9999所需要的时间（毫秒值）
+ 思路：
+ 1.程序执行前，计算一次毫秒值System.currentTimeMillis()
+ 2.打印程序
+ 3.程序执行后，计算一次毫秒值
+ 4.相减，输出
+ 
+ 2.将src数组中的前3个元素，复制到dest数组的前3个位置上。
+ 复制元素前：src[1,2,3,4,5] dest[6,7,8,9,10]
+ 复制元素后：src[1,2,3,4,5] dest[1,2,3,9,10]
+ 思路：*System.arraycopy(src,0,dest,0,3);*
+
+ 
+
+### 3.1.13 StringBuilder类
+
+#### 一、原理
+
+String类
+
+字符串是常量，它们的值在创建之后不能更改。
+
+字符串的底层是一个被final修饰的数组，不能改变，是一个常量。
+
+private final byte[] value;
+
+StringBuilder类
+
+字符串缓冲区，可以提高字符串的操作效率（看成一个长度可变化的字符串）
+
+底层也是一个数组，但是没有final修饰，可以改变长度。
+
+byte[] value=new byte[16];
+
+StringBulider在内存中始终是一个数组，占用空间少，效率高。
+
+如果超出了StringBuilder的容量，会自动扩容。
+
+​                               
+
+#### 二、构造方法和成员方法
+
+**构造方法：**
+
+***public StringBuilder()\****构造一个其中不带字符的字符串生成器，初始容量为 16* *个字符。
+ **public StringBuilder(String str)****构造一个字符串生成器，并初始化为指定的字符串内容。*
+
+**成员方法：**
+
+***public StringBuilder append(...)\***  *添加任意数据类型，返回当前对象自身
+\* *注意：StringBuilder builder2 = builder1.append("abc");
+\* 方法返回的是this，builder1调用的方法，this=builder1
+ 因此，使用append方法无需接收返回值
+ 
+ 链式编程：方法返回值是一个对象，可以继续调用方法。
+
+```
+//链式编程
+System.out.println("abc".toUpperCase().toLowerCase().toUpperCase());
+System.out.println(builder1.append(2).append("hsdj").append(23.1));
+```
+
+ 
+
+三、StringBuilder和String的相互转换*
+ 1.String-->StringBuilder :* 可以使用StringBuilder的构造方法*
+ 2.StringBuilder-->String* *：*可以使用StringBuilder的toString方法
+
+ 
+
+### 3.1.14 包装类
+
+#### 一、概述
+
+基本数据类型使用起来非常方便，但是其没有对应的方法来操作这些基本数据类型的数据。
+
+因此可以使用一个类把基本数据类型装起来，在类中定义一些方法，这个类叫**包装类**。
+
+我们可以使用类中的方法来操作这些基本类型的数据。
+
+基本类型       对应的包装类（位于java.lang，无需导包）
+
+byte           Byte
+
+short         Short
+
+int          **Integer**
+
+long          Long
+
+float          Float
+
+double         Double
+
+char          **Character**
+
+boolean        Boolean
+
+ 
+
+#### 二、装箱与拆箱
+
+（一）装箱：基本数据类型  à 包装类
+
+1.使用构造方法
+ public Integer(int value)
+ public Integer(String s)：传递的字符串必须是基本类型的字符串，否则会抛出异常，100-正确，0抛异常
+ 2.使用静态方法
+ public static Integer valueOf(int i)
+ public static Integer valueOf(String s)
+ 
+ （二）拆箱：包装类     à 基本数据类型
+ public int intValue()
+
+ 
+
+（三）自动装箱与自动拆箱
+
+```
+//自动装箱
+Integer in=1;   //相当于Integer in=new Integer(1);
+
+//自动拆箱
+//Integer类无法直接进行运算
+//in+2相当于：in.intvalue()+2=3  --> int
+//in=3     又是一个自动装箱操作
+in=in+2;
+
+ArrayList<Integer>list=new ArrayList<>();
+list.add(100);  //隐含了一个自动装箱操作
+int num=list.get(0);  //隐含了一个自动拆箱操作
+```
+
+ 
+
+三、基本类型与字符  串类型之间的相互转换
+ （一）基本类型-->字符串（String）
+ 1.基本类型的值+"" 最简单的方法（工作中常用）
+ 2.包装类的静态方法toString(参数)，不是Object类中的toString()重载。
+ 3.String类中的valueOf(参数)方法 返回int参数的字符串表示
+ 
+ （二）字符串 --> 基本类型
+ 使用包装类的静态方法parseXXX("数值类型的字符串")
+   Integer类：static int parseInt(String s)
+   Double类： static double parseDouble(String s)
+
+ 
 
  

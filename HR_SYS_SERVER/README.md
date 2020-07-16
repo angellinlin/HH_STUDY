@@ -24,6 +24,8 @@ HR系统 服务端
 相关访问
 ===
  swagger：运行项目访问 http://localhost:8099/swagger-ui.html
+ 展示图如下：
+ ![image](https://github.com/wenrenjie1994/HH_STUDY/tree/liaojialou01/HR_SYS_SERVER/img/swagger.png)
  
 第二阶段（暂定）
 ===

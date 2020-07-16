@@ -14,8 +14,8 @@
     <bean id="orderService" class="com.weihongyu.spring.proxy.OrderServiceImpl"/>
     <bean id="userService2" class="com.weihongyu.spring.proxy.a.UserServiceImpl2"/>
 
-    <!--AOP编程的配置-->
-    <aop:config>
+    <!--AOP编程的配置  proxy-target-class="false"默认 JDK， true 切换为cglib-->
+    <aop:config proxy-target-class="true">
         <!--切入点表达式-->
         <!--所有类的所有方法-->
         <aop:pointcut id="pc" expression="execution(* *(..))"/>
@@ -38,7 +38,9 @@
         <!--com.weihongyu.spring.proxy包下的所有类的所有方法，包括子包下的-->
         <aop:pointcut id="pc6" expression="execution(* com.weihongyu.spring.proxy..*.*(..))"/>
 
-
         <aop:advisor advice-ref="around" pointcut-ref="pc6"/>
     </aop:config>
+
+    <!--采用注解方式进行AOP开发-->
+    <!--<aop:aspectj-autoproxy />-->
 </beans>

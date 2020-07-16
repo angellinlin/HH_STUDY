@@ -41,6 +41,17 @@ public class SpringAOPTest {
 
         UserService2 userService2 = (UserService2) ctx.getBean("userService2");
         userService2.login();
+    }
+
+    /**
+     * @Description：测试注解方式的AOP
+     */
+    @Test
+    public void test4() throws Exception{
+
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("/applicationContextAOP.xml");
+        com.weihongyu.spring.aspect.OrderService orderService = (com.weihongyu.spring.aspect.OrderService) ctx.getBean("orderService");
+        orderService.showOrder();
 
 
     }

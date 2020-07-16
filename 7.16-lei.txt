@@ -1,0 +1,138 @@
+import java.util.Scanner;
+/**
+ * 类的继承
+ * @author hmb
+ */
+
+
+public class Armor extends Item  // 继承scratch
+{
+    int ac; // 护甲等级
+    public static void main(String[] args)
+    {
+        Armor BuJia = new Armor();
+        Armor SuoZiJia = new Armor();
+
+        BuJia.price = 300;
+        BuJia.ac = 15;
+        BuJia.name = "布甲";
+
+        SuoZiJia.name = "锁子甲";
+        SuoZiJia.ac = 40;
+        SuoZiJia.price = 500;
+
+        System.out.println(BuJia.price);
+    }
+}
+
+
+public class Item {
+    String name;
+    int price;
+}
+
+
+
+#########################################################
+
+import java.util.Scanner;
+/**
+ * 类的重载
+ * @author hmb
+ */
+
+
+public class Support extends Hero {
+    public void heal() {
+        System.out.println(name + " 给别人加了血");
+    }
+
+    public void heal(Hero h1) {
+        System.out.println(name + "对" + h1.name + "加了血 ");
+    }
+
+    public void heal(Hero h1, int hp) {
+        System.out.println(name + "对" + h1.name + "加了" + hp + "的血量 ");
+    }
+
+    public static void main(String[] args) {
+        Support xm = new Support();
+        xm.name = "奶妈";
+
+        Hero h1 = new Hero();
+        h1.name = "盖伦";
+
+        xm.heal(h1);
+        xm.heal(h1, 54);
+    }
+
+}
+
+#############################################################
+/**
+ * 类的构造方法
+ */
+public class Hero {
+
+    String name;
+    float hp;
+    float armor;
+    int moveSpeed;
+
+    public Hero(String heroName, float heroHP, float heroArmor
+                ,int heroMoveSpeed){
+        name = heroName;
+        hp = heroHP;
+        armor = heroArmor;
+        moveSpeed = heroMoveSpeed;
+    }
+
+    public static void main(String[] args) {
+        //创建一个对象
+//        new Hero();
+
+        //使用一个引用来指向这个对象
+        Hero h = new Hero("卡特里娜", 890f, 35f,
+                            340);
+
+    }
+
+}
+
+
+
+#################################################
+/**
+ * 类的构造方法（this）
+ */
+public class Hero {
+
+    String name;
+    float hp;
+    float armor;
+    int moveSpeed;
+
+    public Hero(String name, float hp){
+        this.name = name;
+        this.hp = hp;
+    }
+    public Hero(String name, float hp,float armor, int moveSpeed){
+        this(name, hp);
+        this.armor = armor;
+        this.moveSpeed = moveSpeed;
+    }
+
+    public static void main(String[] args) {
+        //创建一个对象
+//        new Hero();
+
+        //使用一个引用来指向这个对象
+        Hero h = new Hero("卡特里娜", 890f, 35f,
+                            340);
+
+    }
+
+}
+
+
+#########################################

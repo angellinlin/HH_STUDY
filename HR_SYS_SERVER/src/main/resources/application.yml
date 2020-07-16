@@ -28,6 +28,22 @@ jwt:
   expiration: 3600 #过期时间
   tokenHead: 'Bearer ' #JWT负载中拿到开头
 
+#安全路径白名单
+security:
+  ignored:
+    urls:
+      - /swagger-ui.html
+      - /swagger-resources/**
+      - /swagger/**
+      - /**/v2/api-docs
+      - /**/*.js
+      - /**/*.css
+      - /user/login
+      - /user/register
+
+
+
+
 #也可以使用-表示多文档块
 ---
 spring:

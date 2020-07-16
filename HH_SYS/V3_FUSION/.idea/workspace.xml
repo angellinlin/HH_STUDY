@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a1550ae9-fc84-4ad4-930a-a451d2279c1c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="F:\javaweb\maven_repository" />
+        <option name="mavenHome" value="F:/javaweb/apache-maven-3.5.0" />
+        <option name="userSettingsFile" value="F:\javaweb\apache-maven-3.5.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1e9dMcO6Dq19OTCNaygzaoz4IAS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="F:/javaweb/maven_repository/mysql/mysql-connector-java/8.0.17/mysql-connector-java-8.0.17.jar!/" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sys.HRS" />
+      <module name="HR_SYS" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a1550ae9-fc84-4ad4-930a-a451d2279c1c" name="Default Changelist" comment="" />
+      <created>1593737695857</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593737695857</updated>
+      <workItem from="1593737697205" duration="10391000" />
+      <workItem from="1593749161248" duration="1000" />
+      <workItem from="1594006160106" duration="16833000" />
+      <workItem from="1594023297814" duration="6395000" />
+      <workItem from="1594257184270" duration="28236000" />
+      <workItem from="1594289507378" duration="15000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="760" y="273" key="#Project_Structure" timestamp="1593737725153">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="760" y="273" key="#Project_Structure/0.0.2560.1400@0.0.2560.1400" timestamp="1593737725153" />
+    <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593744072189">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="734" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1593744072189" />
+    <state x="1085" y="383" key="#com.intellij.ide.util.MemberChooser" timestamp="1594012563842">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1085" y="383" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1594012563842" />
+    <state x="1009" y="488" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1593744070589">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1009" y="488" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1593744070589" />
+    <state x="1010" y="445" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594265718765">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1010" y="445" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1594265718765" />
+    <state x="1081" y="446" key="FileChooserDialogImpl" timestamp="1594280134848">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1081" y="446" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1594280134848" />
+    <state width="2516" height="476" key="GridCell.Tab.0.bottom" timestamp="1594289382126">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="476" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1594289382126" />
+    <state width="2516" height="476" key="GridCell.Tab.0.center" timestamp="1594289382126">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="476" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1594289382126" />
+    <state width="2516" height="476" key="GridCell.Tab.0.left" timestamp="1594289382126">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="476" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1594289382126" />
+    <state width="2516" height="476" key="GridCell.Tab.0.right" timestamp="1594289382126">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="476" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1594289382126" />
+    <state width="2500" height="470" key="GridCell.Tab.1.bottom" timestamp="1594031066973">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2500" height="470" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1594031066973" />
+    <state width="2500" height="470" key="GridCell.Tab.1.center" timestamp="1594031066973">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2500" height="470" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1594031066973" />
+    <state width="2500" height="470" key="GridCell.Tab.1.left" timestamp="1594031066973">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2500" height="470" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1594031066973" />
+    <state width="2500" height="470" key="GridCell.Tab.1.right" timestamp="1594031066973">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2500" height="470" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1594031066973" />
+    <state x="781" y="331" key="SettingsEditor" timestamp="1594281616349">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="781" y="331" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1594281616349" />
+    <state width="1280" height="700" key="XDebugger.FullValuePopup" timestamp="1594027808878">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1280" height="700" key="XDebugger.FullValuePopup/0.0.2560.1400@0.0.2560.1400" timestamp="1594027808878" />
+  </component>
+</project>

@@ -44,6 +44,8 @@ public class HRS {
             } catch (Exception e) {
                 System.out.println("输入错误,请重新输入");
                 new HRS();
+                e.printStackTrace();
+
 
                 // 跳出存在问题
             }
@@ -54,7 +56,7 @@ public class HRS {
     public static void main(String args[]){
         MySQLConnect mySQLConnect = new MySQLConnect();
 
-        /*new HRS();*/
+        new HRS();
 
     }
 }

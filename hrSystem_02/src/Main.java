@@ -7,8 +7,8 @@ import java.util.LinkedList;
 
 public class Main {
     /*
-        HR系统01-基于txt文件的HR管理系统
-        hc-7/16
+        HR系统02-基于txt文件的HR管理系统
+        hc-7/15
         HR系统的菜单显示（退出系统之前循环显示菜单）
         学生信息存储在桌面txt文件中
      */

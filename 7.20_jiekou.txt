@@ -1,0 +1,71 @@
+package study2_jiekou;
+
+public interface Healer {
+    public void heal();
+}
+
+
+package charactor1;
+import charactor.Hero;
+import study2_jiekou.Healer;
+
+public class Support extends Hero implements Healer {
+    int heal;
+
+    @Override
+    public void heal() {
+        System.out.println("治疗");
+    }
+}
+
+
+####################################################
+package charactor;
+/*
+* 接口与继承：多态
+* */
+import study2_jiekou.Mortal;
+
+public class Hero {
+    public String name;
+    protected int hp;
+    static String copyWrite;
+    public int armor;
+
+    // 单例模式改造-饿汉式
+//    private Hero(){
+//
+//    }
+//    private static Hero instance = new Hero();
+//    public static Hero getInstance(){
+//        return instance;
+//    }
+
+    // 单例模式改造-懒汉式
+//    private Hero(){
+//
+//    }
+//    private static Hero instance ;
+//    public static Hero getInstance(){
+//        if (instance == null){
+//            instance = new Hero();
+//        }
+//        return instance;
+//    }
+    public void kill(Mortal m){
+        m.die();
+    }
+    public static void main(String args[]){
+        Hero garen = new Hero();
+        garen.name  = "Garen";
+        ADHero AIXI = new ADHero();
+        APHero XINDELA = new APHero();
+        ADAPHero EZ = new ADAPHero();
+
+        garen.kill(AIXI);
+
+
+    }
+}
+
+#######################################

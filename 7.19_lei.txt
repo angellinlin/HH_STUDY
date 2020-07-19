@@ -1,0 +1,43 @@
+package study1_lei;
+// 枚举类型
+public enum HeroType {
+    TANK,WIZARD,ASSASSIN,WARRIOR,RANGED,PUSH,FARMING
+}
+
+
+package study1_lei;
+
+public class HERO_CLS {
+    public static void main(String args[]){
+        for(HeroType type:HeroType.values()){  // 利用增强for循环遍历枚举
+            switch (type){
+                case PUSH -> System.out.println("推进");
+                case RANGED -> System.out.println("射手");
+                case TANK -> System.out.println("坦克");
+                case WIZARD -> System.out.println("法师");
+                case FARMING -> System.out.println("打野");
+                case WARRIOR -> System.out.println("战士");
+                case ASSASSIN -> System.out.println("辅助");
+            }
+        }
+    }
+
+}
+
+
+#####################################
+package charactor;
+
+// 单例模式
+public class GaintDragon {
+    // 构造方法私有化
+    private GaintDragon(){
+
+    }
+    // 静态属性指向实例
+    private static GaintDragon instance = new GaintDragon();
+    // public static 的 getInstacnce方法，返回上一步的静态属性；
+    public static GaintDragon getInstance(){
+        return instance;
+    }
+}

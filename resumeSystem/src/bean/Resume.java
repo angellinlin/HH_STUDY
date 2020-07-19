@@ -23,13 +23,13 @@ public class Resume {
      * 5：已签约
      * 6：已入职
      */
-    private int process;
+    private String process;
     /**
     *逻辑删除
      * 0 : 不展示
      * 1 : 展示
     */
-    private int deleteStatus;
+    private String deleteStatus;
 
     public String getName() {
         return name;
@@ -64,34 +64,37 @@ public class Resume {
         this.school = school;
     }
 
-    public int getProcess() {
+    public String getProcess() {
         return process;
     }
 
-    public void setProcess(int process) {
+    public void setProcess(String process) {
         this.process = process;
     }
 
-    public int getDeleteStatus() {
+    public String getDeleteStatus() {
         return deleteStatus;
     }
 
-    public void setDeleteStatus(int deleteStatus) {
+    public void setDeleteStatus(String deleteStatus) {
         this.deleteStatus = deleteStatus;
     }
 
     public Resume(String name, String id) {
         this.name = name;
         this.id = id;
-        this.process=0;
-        this.deleteStatus=0;
+        this.process="0";
+        this.deleteStatus="0";
     }
 
-    public Resume(String name, String id, String gender, String school, int process) {
+    public Resume(String name, String gender, String id, String school, String process) {
         this.name = name;
         this.gender = gender;
         this.id = id;
         this.school = school;
         this.process = process;
+    }
+    public String formatToFile(){
+        return this.name+','+this.gender+','+this.id+','+this.school+','+this.process+'\n';
     }
 }

@@ -162,4 +162,60 @@ public enum HeroType{
      - 可以当注释用,方便阅读；
      - 编译器可以验证@Override下面的方法名是否是父类所有的，如果没有则报错。例如，你如果没写@Override，而你下面的方法名又写错了，这时你的编译器是可以编译通过的，因为编译器会认为这个方法是子类中自己增加的方法。
 
+   ### 异常处理
+   
+   1. try catch finally throws
+   
+      可能出现异常的代码放在try中，如果没有异常就顺序往下执行，不执行catch中代码，否则会运行到catch中
+   
+      - FileNotFoundException是Exception子类
+   
+      - 一段代码可能抛出多种异常，就需要分别进行catch
+   
+        ```java
+        catch (FileNotFoundException e) {
+        
+        	System.out.println("文件不存在");
+        
+        	e.printStackTrace();
+        
+        } catch (ParseException e) {
+        
+        	System.out.println("日期格式解析错误");
+        	e.printStackTrace();
+        
+        }
+        ```
+   
+      - 或者，放在同一个catch中
+   
+        ```
+        catch (FileNotFoundException | ParseException e) {}
+        ```
+   
+        不确定是哪种异常使用instanceof判断
+   
+      - 无论是否出现异常，finally一定会执行
+   
+      - throws抛出异常给上级函数
+   
+        ```java
+        private static void method2() throws FileNotFoundException {
+                File f = new File("d:/LOL.exe");
+                System.out.println("试图打开 d:/LOL.exe");
+                new FileInputStream(f);
+                System.out.println("成功打开");
+        }
+        ```
+   
+        
+   
+      - throws与throw这两个关键字接近，不过意义不一样，有如下区别：
+   
+        - throws 出现在方法声明上，而throw通常都出现在方法体内。
+   
+        - throws 表示出现异常的一种可能性，并不一定会发生这些异常；throw则是抛出了异常，执行throw则一定抛出了某个异常对象。
+   
+   2. 
+   
    

@@ -752,3 +752,158 @@ CGlib创建动态代理的原理：父子继承关系创建代理对象，原始
   1. JDK动态代理   Proxy.newProxyInstance()  通过接口创建代理的实现类 
   2. Cglib动态代理 Enhancer                  通过继承父类创建的代理类 
   ~~~
+
+#### 第六章、基于注解的AOP编程
+
+##### 1. 基于注解的AOP编程的开发步骤
+
+1. 原始对象
+
+2. 额外功能
+
+3. 切入点
+
+4. 组装切面
+
+   ~~~java
+   # 通过切面类 定义了 额外功能 @Around
+              定义了 切入点   @Around("execution(* login(..))")
+              @Aspect 切面类 
+              
+   package com.baizhiedu.aspect;
+   
+   import org.aspectj.lang.ProceedingJoinPoint;
+   import org.aspectj.lang.annotation.Around;
+   import org.aspectj.lang.annotation.Aspect;
+   
+   
+   /*
+          1. 额外功能
+                    public class MyArround implements MethodInterceptor{
+                         public Object invoke(MethodInvocation invocation){
+                                 Object ret = invocation.proceed();
+                                 return ret;
+                         }
+                    }
+          2. 切入点
+             <aop:config
+                <aop:pointcut id=""  expression="execution(* login(..))"/>
+    */
+   @Aspect
+   public class MyAspect {
+   
+       @Around("execution(* login(..))")
+       public Object arround(ProceedingJoinPoint joinPoint) throws Throwable {
+           System.out.println("----aspect log ------");
+           Object ret = joinPoint.proceed();
+           return ret;
+       }
+   }
+      
+   ~~~
+   
+   ~~~xml
+   <bean id="userService" class="com.baizhiedu.aspect.UserServiceImpl"/>
+       <!--
+          切面
+            1. 额外功能
+            2. 切入点
+            3. 组装切面
+       -->
+   <bean id="around" class="com.baizhiedu.aspect.MyAspect"/>
+
+   <!--告知Spring基于注解进行AOP编程-->
+   <aop:aspectj-autoproxy />
+   ~~~
+
+##### 2. 细节
+
+1. 切入点复用
+
+   ~~~java
+   切入点复用：在切面类中定义一个函数 上面@Pointcut注解 通过这种方式，定义切入点表达式，后续更加有利于切入点复用。
+   
+   @Aspect
+   public class MyAspect {
+       
+       @Pointcut("execution(* login(..))")
+       public void myPointcut(){}
+   
+       @Around(value="myPointcut()")
+       public Object arround(ProceedingJoinPoint joinPoint) throws Throwable {
+           System.out.println("----aspect log ------");
+           Object ret = joinPoint.proceed();
+           return ret;
+       }
+   
+   
+       @Around(value="myPointcut()")
+       public Object arround1(ProceedingJoinPoint joinPoint) throws Throwable {
+           System.out.println("----aspect tx ------");
+           Object ret = joinPoint.proceed();
+           return ret;
+       }
+   }
+   ~~~
+   
+2. 动态代理的创建方式 
+
+  ~~~markdown
+AOP底层实现  2种代理创建方式
+  1.  JDK  通过实现接口 做新的实现类方式 创建代理对象
+  2.  Cglib通过继承父类 做新的子类      创建代理对象
+  
+  默认情况 AOP编程 底层应用JDK动态代理创建方式 
+  如果切换Cglib
+       1. 基于注解AOP开发
+          <aop:aspectj-autoproxy proxy-target-class="true" />
+       2. 传统的AOP开发
+          <aop:config proxy-target-class="true">
+          </aop>
+  ~~~
+
+#### 第七章、AOP开发中的一个坑 
+
+~~~java
+坑：在同一个业务类中，进行业务方法间的相互调用，只有最外层的方法,才是加入了额外功能(内部的方法，通过普通的方式调用，都调用的是原始方法)。如果想让内层的方法也调用代理对象的方法，就要AppicationContextAware获得工厂，进而获得代理对象。
+public class UserServiceImpl implements UserService, ApplicationContextAware {
+    private ApplicationContext ctx;
+
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+              this.ctx = applicationContext;
+    }
+
+    @Log
+    @Override
+    public void register(User user) {
+        System.out.println("UserServiceImpl.register 业务运算 + DAO ");
+        //throw new RuntimeException("测试异常");
+
+        //调用的是原始对象的login方法 ---> 核心功能
+        /*
+            设计目的：代理对象的login方法 --->  额外功能+核心功能
+            ApplicationContext ctx = new ClassPathXmlApplicationContext("/applicationContext2.xml");
+            UserService userService = (UserService) ctx.getBean("userService");
+            userService.login();
+
+            Spring工厂重量级资源 一个应用中 应该只创建一个工厂
+         */
+
+        UserService userService = (UserService) ctx.getBean("userService");
+        userService.login("suns", "123456");
+    }
+
+    @Override
+    public boolean login(String name, String password) {
+        System.out.println("UserServiceImpl.login");
+        return true;
+    }
+}
+
+~~~
+
+#### 第八章、AOP阶段知识总结
+
+![](https://kaorou-img.oss-cn-chengdu.aliyuncs.com/img/image-20200503162625116.png)

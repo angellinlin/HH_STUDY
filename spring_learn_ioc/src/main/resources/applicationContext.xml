@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--1. 只配置class属性-->
+    <bean  class="com.weihongyu.spring.Person"/>
+    <!--上述这种配置 有没有id值 ?有 com.weihongyu.spring.Person#0-->
+    <!--应用场景： 如果这个bean只需要使用一次，那么就可以省略id值-->
+    <!--如果这个bean会使用多次，或者被其他bean引用则需要设置id值-->
+
+    <bean id="person" name="p1,p2,p3" class="com.weihongyu.spring.Person"></bean>
+
+    <bean id="person2" class="com.weihongyu.spring.Person"></bean>
+
+    <bean id="product" class="com.weihongyu.spring.Product"></bean>
+</beans>

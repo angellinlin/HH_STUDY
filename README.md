@@ -47,8 +47,8 @@
         缺点：没有事务管理。在多线程的情况下，每来一个线程新建一个连接，容易造成资源耗尽
         spring提供了声明式的事务管理方式 @Transaction。
         通过编程的方式实现@Transaction注解功能，利用了spring的IOC和AOP实现，加深对spring框架理解。
-*  2020-07-14
-  -      第4分支 基于控制台版本的hr_system，C/S系统基于Socket通信方式。
+* 2020-07-14
+  -     第4分支 基于控制台版本的hr_system，C/S系统基于Socket通信方式。
 
 - 2020-07-20
 
@@ -57,6 +57,7 @@
       ![image-20200720103052205](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200720103052205.png)
 
   ​                  **age**--经历GC的次数--老年和新生
+  
   ​                  **偏向锁状态位** -- 1 代表使用偏向锁 -- 0代表不使用偏向锁
 
   ![image-20200720103720053](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200720103720053.png)
@@ -74,6 +75,7 @@
 ​               **第一次**加锁 ---->  CAS（比较和替换）判断threadID是否为空，把当前的线程ID设置上去
 
 ​               **第二次**同一个线程加锁---->和对象头里面保存的threadID直接判断【不修改任何数据】 
+
 ​               **偏向锁：偏向于某一个线程，加锁的时候，效率高**  【openjdk,jol包可以打印对象在内存中的数据】
 
 ​               **线程**---->   线程栈中保存有锁的信息 -栈中有lock record信息记录锁【释放锁之后，删除掉 】

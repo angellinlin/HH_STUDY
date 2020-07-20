@@ -34,6 +34,12 @@ public class DataSourceUtil {
         return statement.execute(sql);
     }
 
+    public int executeUpdate(String sql) throws SQLException {
+        Connection connection = transactionManagerUtil.getConnection();
+        Statement statement = connection.createStatement();
+        return statement.executeUpdate(sql);
+    }
+
     public Resume executeSelect(String sql) throws SQLException {
         Connection connection = transactionManagerUtil.getConnection();
         Statement statement = connection.createStatement();
@@ -56,8 +62,14 @@ public class DataSourceUtil {
                                     resultSet.getInt(8));
 
         return resume;
-
     }
+
+    public boolean executeInquery(String sql) throws SQLException {
+        Connection connection = transactionManagerUtil.getConnection();
+        Statement statement = connection.createStatement();
+        return statement.execute(sql);
+    }
+
 
 
 

@@ -9,7 +9,8 @@ package com.spdb.common;
  */
 public class Const {
 
-    private static final String USERNAME = "USERNAME";
-    private static final String PHONE = "PHONE";
-    private static final String EMAIL = "EMAIL";
+     public static final String IDCARDNUMBER = "IDCARDNUMBER";
+     public static final String PHONE = "PHONE";
+     public static final String EMAIL = "EMAIL";
+
 }

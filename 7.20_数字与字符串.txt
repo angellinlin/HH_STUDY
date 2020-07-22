@@ -1,0 +1,34 @@
+/*
+ *@author:hmb
+ * 封装类的最大最小值
+ * */
+package digit;
+
+public class TestNumber {
+    public static void main(String[] args){
+
+        System.out.println(Byte.MAX_VALUE);
+        System.out.println(Byte.MIN_VALUE);
+    }
+}
+
+########################################################
+/*
+ *@author:hmb
+ * 数字与字符串转换
+ * */
+package digit;
+
+public class TestNumber {
+    public static void main(String[] args){
+        double i =3.14;
+        String str1 = "3.14";
+        // 数字转字符串
+        String str = String.valueOf(i);
+        System.out.println(str);
+        // 字符串转数字
+        float shu = Float.parseFloat(str1);
+        System.out.println(shu);
+
+    }
+}

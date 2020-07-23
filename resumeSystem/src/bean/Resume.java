@@ -3,6 +3,7 @@ package bean;
 public class Resume {
 
     private String name;
+    private String id;
     /**
      *性别(int)
      * 女：0
@@ -10,7 +11,7 @@ public class Resume {
      * */
     private String gender;
 
-    private String id;
+
 
     private String school;
     /**

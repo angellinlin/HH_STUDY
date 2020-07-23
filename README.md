@@ -28,7 +28,7 @@
   - 异常（https://how2j.cn/k/exception/exception-tutorial/332.html）
   - 多线程（https://how2j.cn/k/thread/thread-start/353.html）
   - File类与IO流（https://how2j.cn/k/io/io-file/345.html）
-  - JDBC（https://how2j.cn/k/jdbc/jdbc-mysql/386.html）
+  - JDBC（https://how2j.cn/k/database/database-mysql/386.html）
   - 网络编程（https://how2j.cn/k/socket/socket-ip-port/399.html）
   - 泛型（https://how2j.cn/k/generic/generic-generic/373.html）
   - 反射（https://how2j.cn/k/reflection/reflection-class/108.html）

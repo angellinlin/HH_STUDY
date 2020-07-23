@@ -216,6 +216,44 @@ public enum HeroType{
    
         - throws 表示出现异常的一种可能性，并不一定会发生这些异常；throw则是抛出了异常，执行throw则一定抛出了某个异常对象。
    
-   2. 
    
+   ### JDBC
    
+   **JDBC** (Java DataBase Connection) 是JAVA访问数据库的API
+   
+   1. JDBC基础
+   
+      - 初始化驱动
+   
+        ```
+        Class.forName(("com.mysql.jc.database.Driver");//初始化驱动类
+        ```
+   
+      - 建立与数据库的连接
+   
+        ```
+        Connection c = DriverManager.getConnection(
+        "database:mysql://127.0.0.1:3306/tables_name?characterEncoding=UTF-8",
+         "root", "admin");
+        ```
+   
+      - 创建Statement
+   
+        ```
+        Statement s = c.createStatement();
+        ```
+   
+      - 执行SQL
+   
+        ```
+        s.execute(sql);
+        ```
+   
+      - 关闭连接
+   
+        - 先关闭Statement，后关闭Connection
+        - 可以使用try-with-resource
+   
+   2. JDBC查询
+   
+      - executeQuery 执行SQL查询语句，在取第二列的数据的时候，用的是get(2) ，而不是get(1)。这个是整个Java自带的api里**唯二**的地方，使用**基1**的，即2就代表第二个。

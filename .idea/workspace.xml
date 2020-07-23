@@ -10,9 +10,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f893634b-4fb5-425c-84c7-1e60a248cbaf" name="Default Changelist" comment="">
+    <list default="true" id="f893634b-4fb5-425c-84c7-1e60a248cbaf" name="Default Changelist" comment="基于文本文件的简历管理系统">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Java学习/Java学习笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/Java学习/Java学习笔记.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resumeSystem/out/production/resumeSystem/bean/Resume.class" beforeDir="false" afterPath="$PROJECT_DIR$/resumeSystem/out/production/resumeSystem/bean/Resume.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resumeSystem/out/production/resumeSystem/sys/resumeSys.class" beforeDir="false" afterPath="$PROJECT_DIR$/resumeSystem/out/production/resumeSystem/sys/resumeSys.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resumeSystem/resumeSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/resumeSystem/resumeSystem.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resumeSystem/src/bean/Resume.java" beforeDir="false" afterPath="$PROJECT_DIR$/resumeSystem/src/bean/Resume.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resumeSystem/src/sys/resumeSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/resumeSystem/src/sys/resumeSys.java" afterDir="false" />
     </list>
@@ -20,6 +24,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,20 +46,24 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JavaLearning" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HH_STUDY-mysql" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\HH_STUDY\resumeSystem\src" />
+      <recent name="D:\HH_STUDY\resumeSystem\jdbc" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\HH_STUDY\resumeSystem\src\sys" />
       <recent name="D:\HH_STUDY\resumeSystem\src\bean" />
       <recent name="D:\HH_STUDY\HR_SYS\HR_src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.resumeSys">
     <configuration name="resumeSys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sys.resumeSys" />
       <module name="resumeSystem" />
@@ -77,9 +92,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="testJDBC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="database.testJDBC" />
+      <module name="resumeSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.resumeSys" />
+        <item itemvalue="Application.testJDBC" />
       </list>
     </recent_temporary>
   </component>
@@ -120,7 +149,22 @@
       <workItem from="1594947645872" duration="943000" />
       <workItem from="1594996427154" duration="751000" />
       <workItem from="1595152654420" duration="183000" />
+      <workItem from="1595153042157" duration="356000" />
+      <workItem from="1595162082084" duration="5434000" />
+      <workItem from="1595209763478" duration="4028000" />
+      <workItem from="1595245403793" duration="1121000" />
+      <workItem from="1595389950130" duration="8483000" />
+      <workItem from="1595468259743" duration="9658000" />
+      <workItem from="1595500001333" duration="1959000" />
     </task>
+    <task id="LOCAL-00001" summary="基于文本文件的简历管理系统">
+      <created>1595153309051</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1595153309051</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,12 +175,22 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="基于文本文件的简历管理系统" />
+    <option name="LAST_COMMIT_MESSAGE" value="基于文本文件的简历管理系统" />
   </component>
   <component name="WindowStateProjectService">
     <state x="817" y="355" key="#Notifications" timestamp="1594996496812">
@@ -148,15 +202,16 @@
     </state>
     <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1593782004614" />
     <state x="311" y="0" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1594825297298" />
-    <state x="223" y="67" width="1023" height="682" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594826246410">
+    <state x="223" y="67" width="1023" height="682" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595166301180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1594823600423" />
-    <state x="223" y="67" width="1023" height="682" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594826246410" />
-    <state x="525" y="212" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593777380575">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="223" y="67" width="1023" height="682" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595166301180" />
+    <state x="656" y="268" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595165992887">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="525" y="212" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1593777380575" />
+    <state x="656" y="268" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595165992887" />
     <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1594028253924">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -165,31 +220,39 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="492" y="179" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594815212138" />
-    <state x="624" y="207" key="FileChooserDialogImpl" timestamp="1594896373059">
+    <state x="29" y="317" width="949" height="383" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog" timestamp="1595502642274">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="29" y="317" width="949" height="383" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595502642274" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1595153398181">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595153398181" />
+    <state x="624" y="207" key="FileChooserDialogImpl" timestamp="1595500490324">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1593787449945" />
-    <state x="624" y="207" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594896373059" />
-    <state width="1504" height="271" key="GridCell.Tab.0.bottom" timestamp="1594884421007">
+    <state x="624" y="207" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595500490324" />
+    <state width="1867" height="299" key="GridCell.Tab.0.bottom" timestamp="1595502546241">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1167" height="154" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594823664274" />
-    <state width="1504" height="271" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594884421007" />
-    <state width="1504" height="271" key="GridCell.Tab.0.center" timestamp="1594884421007">
+    <state width="1867" height="299" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595502546241" />
+    <state width="1867" height="299" key="GridCell.Tab.0.center" timestamp="1595502546241">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1167" height="154" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594823664274" />
-    <state width="1504" height="271" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594884421007" />
-    <state width="1504" height="271" key="GridCell.Tab.0.left" timestamp="1594884421007">
+    <state width="1867" height="299" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595502546241" />
+    <state width="1867" height="299" key="GridCell.Tab.0.left" timestamp="1595502546241">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1167" height="154" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594823664273" />
-    <state width="1504" height="271" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594884421007" />
-    <state width="1504" height="271" key="GridCell.Tab.0.right" timestamp="1594884421007">
+    <state width="1867" height="299" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595502546241" />
+    <state width="1867" height="299" key="GridCell.Tab.0.right" timestamp="1595502546241">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1167" height="154" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594823664274" />
-    <state width="1504" height="271" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594884421007" />
+    <state width="1867" height="299" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595502546241" />
     <state width="960" height="337" key="GridCell.Tab.1.bottom" timestamp="1594828019042">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -210,14 +273,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="776" y="280" key="NewModule_or_Project.wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1594825064341" />
-    <state x="383" y="0" key="SettingsEditor" timestamp="1594825534257">
+    <state x="317" y="0" key="SettingsEditor" timestamp="1595422683195">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="306" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594823659288" />
-    <state x="383" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1594825534257" />
+    <state x="317" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595422683195" />
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog" timestamp="1594998555623">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594998555623" />
+    <state x="444" y="190" key="VcsDiffUtil.ChangesDialog" timestamp="1595153190237">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="444" y="190" key="VcsDiffUtil.ChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595153190237" />
   </component>
 </project>

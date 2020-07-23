@@ -34,7 +34,6 @@ public class HRSClient {
     private static class ClientContainer {
         private static HRSClient hrsClient = new HRSClient();
     }
-
     public HRSClient getClientContainer() {
         return ClientContainer.hrsClient;
     }
@@ -42,6 +41,34 @@ public class HRSClient {
 
     // 此处用于融入传输的数据帧  根据不同数据帧进行添加
     public void sendMsgToServer(String message) {
+        String rebackMsg = "";
+
+        try {
+            printWriter.println(message);   // 输入给Server的数据
+            System.out.println("ClinetToServer:" + message);
+            rebackMsg = bufferedReader.readLine();// 读取发回的数据
+            System.out.println("Server返回信息：" + rebackMsg);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteMsgToServer(String message) {
+        String rebackMsg = "";
+        try {
+            printWriter.println(message);   // 输入给Server的数据
+            System.out.println("ClinetToServer:" + message);
+            rebackMsg = bufferedReader.readLine();// 读取发回的数据
+            System.out.println("Server返回信息：" + rebackMsg);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+    }
+
+    public void changeMsgToServer(String message) {
         String rebackMsg = "";
         try {
             printWriter.println(message);   // 输入给Server的数据
@@ -52,7 +79,19 @@ public class HRSClient {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
+    public void searchMsgToServer(String message) {
+        String rebackMsg = "";
+        try {
+            printWriter.println(message);   // 输入给Server的数据
+            System.out.println("ClinetToServer:" + message);
+            rebackMsg = bufferedReader.readLine();// 读取发回的数据
+            System.out.println("Server返回信息：" + rebackMsg);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void closeClient() {
@@ -89,13 +128,13 @@ public class HRSClient {
                         hrsClient.sendMsgToServer(tranProtocol.addMsgToServer());
                         break;
                     case 2:
-                        tranProtocol.deleteMsgToServer();
+                        hrsClient.deleteMsgToServer(tranProtocol.deleteMsgToServer());
                         break;
                     case 3:
-                        tranProtocol.changeMsgToServer();
+                        hrsClient.changeMsgToServer(tranProtocol.changeMsgToServer());
                         break;
                     case 4:
-                        tranProtocol.searchMsgToServer();
+                        hrsClient.searchMsgToServer(tranProtocol.searchMsgToServer());
                         break;
                     case 5:
                         hrsClient.sendMsgToServer(tranProtocol.exitMsg());
@@ -104,12 +143,11 @@ public class HRSClient {
                         System.exit(0);
                 }
             } catch (Exception e) {
-
                 e.printStackTrace();
                 System.out.println("输入错误,请重新输入");
 
 
-                // 跳出存在问题
+
             }
 
         }

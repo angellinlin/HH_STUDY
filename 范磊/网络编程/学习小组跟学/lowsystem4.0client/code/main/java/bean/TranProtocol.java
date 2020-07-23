@@ -26,14 +26,21 @@ public class TranProtocol {
 
 
     public String deleteMsgToServer() {
-        String head = "delete" + "/n";
-        Scanner input = new Scanner(System.in);
-        String toServerMsg = input.nextLine();
-        deleteMsg = head + toServerMsg;
+        try {
+            System.out.println("请输入删除人员ID!");
+            String head = "delete" + "/n";
+            Scanner input = new Scanner(System.in);
+            String toServerMsg = input.nextLine();
+            deleteMsg = head + toServerMsg;
+        } catch (Exception e) {
+            deleteMsgToServer();
+        }
+
 
         return deleteMsg;
     }
     public String changeMsgToServer() {
+        System.out.println("请按格式输入修改信息：name,id,school!");
         String head = "change" + "/n";
         Scanner input = new Scanner(System.in);
         String toServerMsg = input.nextLine();
@@ -42,6 +49,7 @@ public class TranProtocol {
         return changeMsg;
     }
     public String searchMsgToServer() {
+        System.out.println("查询所有人员请输入 Y " + "," + "或直接输入人员 ID");
         String head = "search" + "/n";
         Scanner input = new Scanner(System.in);
         String toServerMsg = input.nextLine();

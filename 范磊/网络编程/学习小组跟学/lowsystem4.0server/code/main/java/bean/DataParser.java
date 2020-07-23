@@ -20,7 +20,7 @@ public class DataParser {
         ResponseMsg responseMsg = null;
         if (head.equals("add")) {
             responseMsg = new ResponseMsg(head, Response);
-            parserAdd(Response);
+            // 调用消息体解析方法，并且赋值给people，parseAdd()
 
         } else if (head.equals("delete")) {
             responseMsg = new ResponseMsg(head, Response);
@@ -40,11 +40,31 @@ public class DataParser {
     // 进一步解析Response里面的数据，并返回给执行层
     public People parserAdd(String msg) {
         String[] strings = msg.split(",");
-        String name = strings[1];
-        int id = Integer.parseInt(strings[2]);
-        String school = strings[3];
+        String name = strings[0];
+        int id = Integer.parseInt(strings[1]);
+        String school = strings[2];
         People people = new People(name, id, school);
         return people;
+    }
+
+
+    public int parserDelete(int msg) {
+        int id = msg;
+        return id;
+    }
+
+    public People parserChange(String msg) {
+        System.out.println(msg);
+        String[] strings = msg.split(",");
+        String name = strings[0];
+        int id = Integer.parseInt(strings[1]);
+        String school = strings[2];
+        People people = new People(name, id, school);
+        return people;
+    }
+
+    public String parserSearch(String msg) {
+        return msg;
     }
 
 

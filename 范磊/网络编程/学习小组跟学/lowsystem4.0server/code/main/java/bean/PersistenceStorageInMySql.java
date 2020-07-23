@@ -10,21 +10,16 @@ import java.util.Scanner;
 
 public class PersistenceStorageInMySql {
 
-    public void add() {
+    public String getRebackMsgToserver() {
+        return rebackMsgToserver;
+    }
+
+    private String rebackMsgToserver = "";
+    public void add(People peoplelist) {
         System.out.println("进入人员添加界面");
-        /**
-         * 主 利用FileOutStream类 和 BufferReader类
-         */
+
         try {
             System.out.println("请按照格式依次输入:姓名,ID,学校");
-            Scanner scanner = new Scanner(System.in);
-            String input = scanner.nextLine();
-            String[] tempinfos = input.split(",|，");
-            String tempName = tempinfos[0];
-            int tempID = Integer.parseInt(tempinfos[1]);
-            String tempSchool = tempinfos[2];
-            People people = new People(tempName, tempID, tempSchool);
-
             if (!MySQLConnect.getConnection().isClosed()) {
 //                Statement statement = MySQLConnect.getConnection().createStatement();
 //                String sql = "insert into peoplelist (name,id,school) values (" + "'" + people.getPeopleName() + "'," + "'" + people.getId() + "'," + "'" + people.getSchool() + "'" + ")";
@@ -32,16 +27,16 @@ public class PersistenceStorageInMySql {
                 // 预编译模式
                 String sql = "insert into peoplelist(name,id,school) values(?,?,?)";
                 PreparedStatement statement = MySQLConnect.getConnection().prepareStatement(sql);
-                statement.setString(1, people.getPeopleName());
-                statement.setInt(2, people.getId());
-                statement.setString(3, people.getSchool());
+                statement.setString(1, peoplelist.getPeopleName());
+                statement.setInt(2, peoplelist.getId());
+                statement.setString(3, peoplelist.getSchool());
                 int resultSet = statement.executeUpdate();
                 if (resultSet > 0) {
                     System.out.println("信息添加成功！");
-                    System.out.println("添加信息人员:" + people.getPeopleName() + people.getId() + people.getSchool());
+                    System.out.println("添加信息人员:" + peoplelist.getPeopleName() +"," + peoplelist.getId() + "," +peoplelist.getSchool());
                 } else {
                     System.out.println("信息添加失败！");
-                    add();
+                    add(peoplelist);
                 }
             }
         } catch (SQLException e) {
@@ -50,14 +45,10 @@ public class PersistenceStorageInMySql {
     }
 
 
-    public void delete() {
+    public void delete(int deleteID) {
         System.out.println("进入信息删除界面");
-
-        String newInfo = "";
+        System.out.println("删除人员ID为：" + deleteID);
         try {
-            System.out.println("请输入删除人员ID");
-            Scanner scanner = new Scanner(System.in);
-            int deleteID = scanner.nextInt();
 
             if (!MySQLConnect.getConnection().isClosed()) {
                 Statement statement = MySQLConnect.getConnection().createStatement();
@@ -70,28 +61,18 @@ public class PersistenceStorageInMySql {
 
         } catch (SQLException e) {
             System.out.println("格式输入错误,请重新输入");
-            delete();
+            delete(deleteID);
             e.printStackTrace();
         }
     }
 
-    // 待修改
-    public void change() {
-        System.out.println("进入信息修改界面");
-
+    public void change(People changepeoplelist) {
+        System.out.println("进入信息修改界面,警告ID不可变！！！");
+        System.out.println("修改信息为：" + changepeoplelist.getPeopleName() + "," + changepeoplelist.getId() + "," + changepeoplelist.getSchool());
         try {
-            System.out.println("请输入修改信息");
-            Scanner scanner = new Scanner(System.in);
-            String strs = scanner.nextLine();
-            String[] tempinfos = strs.split(",|，");
-            String tempName = tempinfos[0];
-            int tempID = Integer.parseInt(tempinfos[1]);
-            String tempSchool = tempinfos[2];
-            People people = new People(tempName, tempID, tempSchool);
-
             if (!MySQLConnect.getConnection().isClosed()) {
                 Statement statement = MySQLConnect.getConnection().createStatement();
-                String sql = "update peoplelist set name=" + "'" + people.getPeopleName() + "'," + "id=" + people.getId() + "," + "school=" + "'" + people.getSchool() + "'";
+                String sql = "update peoplelist set name= " + "'"+changepeoplelist.getPeopleName()+"'"+",school= "+"'"+changepeoplelist.getSchool()+"'" +" where id= "+changepeoplelist.getId();
                 int resultSet = statement.executeUpdate(sql);
                 if (resultSet > 0) {
                     System.out.println("信息修改成功！");
@@ -101,30 +82,32 @@ public class PersistenceStorageInMySql {
             }
         } catch (SQLException e) {
             System.out.println("格式输入错误,请重新输入");
-            change();
+            change(changepeoplelist);
             e.printStackTrace();
         }
-
     }
 
-    public void search() {
-        System.out.println("查询所有人员请输入 Y " + "," + "或直接输入人员 ID");
-        Scanner input = new Scanner(System.in);
-        String key = input.nextLine();
-        if (key.equals("Y")) {
-            readInfo();
-        } else if (Integer.valueOf(key) > 0) {
-            System.out.println("指定人员查询");
-            readInfo(Integer.valueOf(key));
-        } else {
-            System.out.println("查询输入错误,请重新输入");
+    public void search(String message) {
+        try {
+            if (message.equals("Y")) {
+                readInfo();
+            } else if (Integer.valueOf(message) > 0) {
+                System.out.println("查询人员ID:" + message);
+                readInfo(Integer.valueOf(message));
+            } else {
+                System.out.println("查询输入错误,请重新输入");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            search(message);
+
         }
+
     }
 
     // 重载两个不同参数方法,实现两种类型的查询
     // 所有数据遍历
-    public void readInfo() {
-
+    public String readInfo() {
         try {
 
             if (!MySQLConnect.getConnection().isClosed()) {
@@ -136,18 +119,17 @@ public class PersistenceStorageInMySql {
                     String Name = resultSet.getString("name");
                     String ID = resultSet.getString("id");
                     String School = resultSet.getString("school");
-                    System.out.println("查询信息为：\t" + Name + "," + ID + "," + School);
+                    rebackMsgToserver += "查询信息为：" + Name + "," + ID + "," + School+";\t";
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        return rebackMsgToserver;
     }
 
     // 指定类型查询
-    public void readInfo(int peopleID) {
-
+    public String readInfo(int peopleID) {
         try {
             if (!MySQLConnect.getConnection().isClosed()) {
                 Statement statement = MySQLConnect.getConnection().createStatement();
@@ -158,12 +140,12 @@ public class PersistenceStorageInMySql {
                     String Name = resultSet.getString("name");
                     String ID = resultSet.getString("id");
                     String School = resultSet.getString("school");
-                    System.out.println("查询信息为：\t" + Name + "," + ID + "," + School);
+                    rebackMsgToserver="查询信息为：" + Name + "," + ID + "," + School;
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        return rebackMsgToserver;
     }
 }

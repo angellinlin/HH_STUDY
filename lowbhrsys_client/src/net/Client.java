@@ -19,6 +19,9 @@ public class Client {
     Socket tcpConnection;
 
     public Client() {
+        //测试一下注释呀20200724
+        //测试一下注释呀20200724
+
         try {
             tcpConnection = new Socket("127.0.0.1", 1235);
             System.out.print("连接上服务器了");

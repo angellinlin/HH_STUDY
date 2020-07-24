@@ -19,6 +19,7 @@ public class Client {
     Socket tcpConnection;
 
     public Client() {
+        //怪了
         try {
             tcpConnection = new Socket("127.0.0.1", 1235);
             System.out.print("连接上服务器了");

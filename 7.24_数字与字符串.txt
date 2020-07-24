@@ -1,0 +1,188 @@
+/*
+ *@author:hmb
+ * 格式化输出
+ * */
+package digit;
+import java.util.Scanner;
+
+public class FormatPrint {
+    public static void main(String [] args){
+        Scanner s = new Scanner(System.in);
+        System.out.println("请输入地名：");
+        String diMing = s.nextLine();
+        System.out.println("请输入公司类型：");
+        String type = s.nextLine();
+        System.out.println("请输入公司名称：");
+        String name = s.nextLine();
+        System.out.println("请输入老板名称：");
+        String xinMing = s.nextLine();
+        System.out.println("请输入金额：");
+        int jine = s.nextInt();
+        String k = s.nextLine();
+
+        System.out.println("请输入产品：");
+        String chanPin = s.nextLine();
+        System.out.println("请输入价格计量单位：");
+        String danWei = s.nextLine();
+
+        String out = "%s最大%s-%s倒闭了，王八蛋老板%s吃喝嫖赌，欠下了%d个亿，" +
+                "带着他的小姨子跑了!我们没有办法，拿着钱包抵工资!原价都是一%s多、" +
+                "两%s多、三%s多的%s，现在全部只卖二十块，统统只要二十块!%s王八蛋，" +
+                "你不是人!我们辛辛苦苦给你干了大半年，你不发工资，你还" +
+                "我血汗钱，还我血汗钱!";
+        System.out.printf(out,diMing,type,name,xinMing,jine,danWei,danWei,danWei,chanPin,
+                xinMing);
+    }
+}
+
+
+########################################################
+/*
+ *@author:hmb
+ * 字符
+ * */
+package digit;
+import java.util.Scanner;
+
+
+public class character {
+    public static void main(String[] args){
+        System.out.println("请输入字符串：");
+        Scanner s = new Scanner(System.in);
+        String str = s.nextLine();
+        char[] cs = str.toCharArray();
+        for(char i :cs){
+            if(Character.isDigit(i) || Character.isUpperCase(i)){
+                System.out.println(i);
+            }
+        }
+    }
+}
+##########################################################
+/*
+ *@author:hmb
+ * 字符首字母大写
+ * */
+package digit;
+
+public class string {
+
+    public void changeString1(String str){
+        StringBuilder out = new StringBuilder();
+        String[] a = str.split(" ");
+        a[0] = a[0].substring(0,1).toUpperCase()+a[0].substring(1);
+        for(String i : a){
+            i =i.substring(0,1).toUpperCase()+i.substring(1);
+            out.append(i).append(' ');
+        }
+        System.out.println(out);
+    }
+     
+    public static void main(String [] args){
+        String str = "let there be light";
+        string a = new string();
+        a.changeString1(str);
+    }
+}
+#######################################################
+/*
+ *@author:hmb
+ * 数数字符串中多少个p开头的单词
+ * */
+package digit;
+
+public class string {
+
+    public void countString1(String str){
+        StringBuilder out = new StringBuilder();
+        int count = 0;
+        String[] a = str.split(" ");
+        for(String i : a){
+            if("p".equals(i.substring(0, 1))){
+                count +=1;
+            }
+        }
+        System.out.println(count);
+    }
+
+    public static void main(String [] args){
+        String str = "peter piper picked a peck of pickled peppers";
+        string a = new string();
+        a.countString1(str);
+    }
+}
+##########################################################
+/*
+ *@author:hmb
+ * 间隔大写小写
+ * */
+package digit;
+
+public class string {
+
+    public void changeString2(String str){
+        char [] cs = str.toCharArray();
+        for(int i=0 ;i<cs.length;i++){
+            if(i%2 ==0){
+                cs[i] = Character.toUpperCase(cs[i]);
+            }
+        }
+        System.out.println(cs);
+    }
+
+    public static void main(String [] args){
+        String str = "legendary";
+        string a = new string();
+        a.changeString2(str);
+    }
+}
+#####################################################
+/*
+ *@author:hmb
+ * 最后一个字母变大写
+ * */
+package digit;
+
+public class string {
+
+    public void changeString3(String str){
+        char [] cs = str.toCharArray();
+        for(int i=0 ;i<cs.length;i++){
+            if(i==cs.length-1){
+                cs[i] = Character.toUpperCase(cs[i]);
+            }
+        }
+        System.out.println(cs);
+    }
+
+    public static void main(String [] args){
+        String str = "legendary";
+        string a = new string();
+        a.changeString3(str);
+    }
+}
+#########################################################
+/*
+ *@author:hmb
+ * 最后一个two首字母大写
+ * */
+package digit;
+
+public class string {
+
+    public void changeString4(String str){
+        int index = str.lastIndexOf("two");
+        char[] cs = str.toCharArray();
+        cs[index] = Character.toUpperCase(cs[index]);
+        String out = new String(cs);
+
+        System.out.println(out);
+    }
+
+    public static void main(String [] args){
+        String str = "Nature has given us that two ears, two eyes, and but one tongue, to the end that we should hear and see more than we speak";
+        string a = new string();
+        a.changeString4(str);
+    }
+}
+

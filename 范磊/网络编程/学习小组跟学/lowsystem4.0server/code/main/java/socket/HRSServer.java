@@ -6,11 +6,16 @@ import JDBC.MySQLConnect;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import static java.util.concurrent.Executors.*;
 
 public class HRSServer {
 
-    ServerSocket server = null;  // 设置监控端口
-    Socket socketConnect = null; // 构建与Clinet 通信得socket返回对象
+    static ServerSocket server = null;  // 设置监控端口
+    static Socket socketConnect = null; // 构建与Clinet 通信得socket返回对象
+    int threadPoolSzie = 5;
 
     public HRSServer() {
         try {
@@ -24,8 +29,13 @@ public class HRSServer {
             try {
                 socketConnect = server.accept();
                 System.out.println("客户端连接成功！");
+                // 开启线程
                 ServerThread serverThread = new ServerThread(socketConnect);
-                serverThread.start();
+                /*serverThread.start();*/
+
+                // 补充一个线程池方法 ThreadPool
+                ExecutorService executorService = newFixedThreadPool(threadPoolSzie);
+                executorService.submit(serverThread);
 
             } catch (IOException e) {
                 e.printStackTrace();

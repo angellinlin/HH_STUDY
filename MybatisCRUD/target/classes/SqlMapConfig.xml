@@ -18,6 +18,7 @@
                 <property name="url" value="jdbc:mysql://localhost:3306/db2"></property>
                 <property name="username" value="root"></property>
                 <property name="password" value="root"></property>
+
             </dataSource>
         </environment>
     </environments>
@@ -29,7 +30,9 @@
 
     <!--以注解形式进行配置-->
     <mappers>
-        <mapper class="dao.IUserDao"></mapper>
+        <package name="dao"></package>
+<!--        <mapper class="dao.IAccountDao"></mapper>-->
+
     </mappers>
 
 </configuration>

@@ -1,3 +1,4 @@
+import bean.QueryVo;
 import bean.User;
 import dao.IUserDao;
 import org.apache.ibatis.io.Resources;
@@ -102,7 +103,34 @@ public class MybatisTest {
      */
     @Test
     public void testDel() throws IOException {
-        userDao.delUser(53);
+        userDao.delUser(43);
+    }
+
+
+    /**
+     * 根据姓名实现模糊查询
+     * @throws IOException
+     */
+    @Test
+    public void testFindByName() throws IOException{
+        QueryVo queryVo = new QueryVo();
+        User user = new User();
+        user.setUsername("%王%");
+        queryVo.setUser(user);
+        List<User> byName = userDao.findByName(queryVo);
+        for (User user1 : byName) {
+            System.out.println(user1);
+        }
+    }
+
+
+    /**
+     * 根据id进行用户的查询
+     */
+    @Test
+    public void testFindById(){
+        User byId = userDao.findById(42);
+        System.out.println(byId);
     }
 
 }

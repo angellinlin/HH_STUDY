@@ -1,5 +1,6 @@
 package dao;
 
+import bean.QueryVo;
 import bean.User;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
@@ -45,6 +46,21 @@ public interface IUserDao {
     @Delete("delete from user where id=#{id}")
     void delUser(Integer id);
 
+
+    /**
+     * 模糊查询
+     * @param queryVo
+     * @return
+     */
+    @Select("select * from user where username like #{user.username}")
+    List<User> findByName(QueryVo queryVo);
+
+    /**
+     * 根据id查询用户信息
+     * @param id
+     */
+    @Select("select * from user where id=#{idd}")
+    User findById(int id);
 
 
 }

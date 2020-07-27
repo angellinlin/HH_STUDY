@@ -5,6 +5,8 @@ package com.weihongyu.spring;
  * @Date: 2020/7/20 16:30
  * @Description:
  */
+
+
 public class Product {
     private String name;
 

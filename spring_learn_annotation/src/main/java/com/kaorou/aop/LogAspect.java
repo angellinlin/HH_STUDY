@@ -19,6 +19,9 @@ public class LogAspect {
     @Pointcut("execution(* com.kaorou.anno.UserServiceImpl.*(..))")
     public void pc1(){}
 
+    @Pointcut("execution(* com.kaorou.anno.TestJDKProxy.*(..))")
+    public void pc2(){}
+
     @Around("pc1()")
     public Object Log(ProceedingJoinPoint joinPoint) throws Throwable {
 
@@ -27,6 +30,14 @@ public class LogAspect {
         Object ret = joinPoint.proceed();
 
         System.out.println("---------AOP log 测试后------------");
+        return ret;
+    }
+
+    @Around("pc2()")
+    public Object Log22(ProceedingJoinPoint joinPoint) throws Throwable {
+
+        System.out.println("---------AOP log 测试------------");
+        Object ret = joinPoint.proceed();
         return ret;
     }
 }

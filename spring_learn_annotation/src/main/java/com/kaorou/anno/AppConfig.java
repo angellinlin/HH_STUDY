@@ -3,10 +3,8 @@ package com.kaorou.anno;
 import com.alibaba.druid.pool.DruidDataSource;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.*;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -22,18 +20,24 @@ import javax.sql.DataSource;
 @ComponentScan(basePackages = "com.kaorou")
 @MapperScan(basePackages = "com.kaorou.anno")
 @EnableTransactionManagement
-@EnableAspectJAutoProxy  //开启AOP注解功能
+@EnableAspectJAutoProxy(proxyTargetClass = false)  //开启AOP注解功能, 默认false JDK, true为cglib
+                                                   //但是当代理类没有实现接口时，无论true,false都会自动切换为cglib
+@Import(DataSourceConfig.class)
 public class AppConfig {
+
+    @Autowired
+    private DataSourceConfig dataSourceConfig;
+
 
     //-----------Mybatis配置开始-------------
     //1. dataSource
     @Bean
     public DataSource dataSource(){
         DruidDataSource dataSource = new DruidDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/hr?useSSL=false");
-        dataSource.setUsername("root");
-        dataSource.setPassword("root");
+        dataSource.setDriverClassName(dataSourceConfig.getDriverClassName());
+        dataSource.setUrl(dataSourceConfig.getUrl());
+        dataSource.setUsername(dataSourceConfig.getUsername());
+        dataSource.setPassword(dataSourceConfig.getPassword());
         return dataSource;
     }
 
@@ -42,8 +46,8 @@ public class AppConfig {
     public SqlSessionFactoryBean sqlSessionFactoryBean(DataSource dataSource){
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
-        sqlSessionFactoryBean.setTypeAliasesPackage("com.kaorou.entity");
-        sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("com.kaorou.mapper/UserDAOMapper.xml"));
+        sqlSessionFactoryBean.setTypeAliasesPackage(dataSourceConfig.getTypeAliasesPackage());
+        sqlSessionFactoryBean.setMapperLocations(new ClassPathResource(dataSourceConfig.getMapperLocations()));
         return sqlSessionFactoryBean;
     }
 

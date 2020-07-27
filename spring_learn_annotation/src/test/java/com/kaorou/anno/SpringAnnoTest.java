@@ -48,9 +48,19 @@ public class SpringAnnoTest {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
         UserService userServiceImpl = (UserService) ctx.getBean("userServiceImpl");
         User user = new User();
-        user.setName("xiaowang888");
-        user.setPassword("999777111888");
+        user.setName("xiaowang787");
+        user.setPassword("123456");
 
         userServiceImpl.save(user);
+    }
+
+    /**
+     * @Description:测试AOP底层，不实现接口，底层会自动切换为cglib
+     */
+    @Test
+    public void test4() throws Exception{
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+        TestJDKProxy testJDKProxy = (TestJDKProxy) ctx.getBean("testJDKProxy");
+        testJDKProxy.say();
     }
 }

@@ -1,0 +1,5 @@
+#store data by FileOutputStream
+#Tue Jul 28 18:08:33 CST 2020
+\u8288\u6708=85
+\u738B\u662D\u541B=90
+\u5B59\u5C1A\u9999=100

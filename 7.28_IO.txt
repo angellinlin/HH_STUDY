@@ -1,0 +1,90 @@
+/*
+ * 字节流-创建多级目录
+ * */
+package stream;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class TestStream {
+
+    public static void mkdirs(String path) {
+        File file = new File(path);
+        if(!file.exists() && !file.isDirectory()){
+            file.mkdirs();
+        }
+    }
+
+    public static void main(String[] args) {
+        String dirPath = "C:/Users/Hmb/Desktop/a12/LOL2/lol";
+        String filePath = dirPath + "/LOL.txt";
+        TestStream.mkdirs(dirPath);
+
+        File f = new File(filePath);
+        try(FileOutputStream fos = new FileOutputStream(f)) {
+            byte[] data = {88,89};
+            fos.write(data);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+}
+#####################################################
+/**
+ * @author: hmb
+ * @Description: 文件加密
+ */
+package stream;
+import java.io.*;
+
+public class homework {
+
+    public static void encodeFile(File encodingFile,File encodedFile){
+        char[] all = new char[(int)encodingFile.length()];
+        System.out.println(all.length);
+        try(FileReader fr = new FileReader(encodingFile)){
+            fr.read(all);
+            for (int i=0;i<all.length;i++){
+                if('0'<=all[i] && all[i]<'9'){
+                    all[i] = (char) ((int) all[i] +1);
+                }
+                else if (all[i] == '9'){
+                    all[i] = '0';
+                }
+                else if('a'<=all[i] && all[i]<'z'){
+                    all[i] = (char) ((int) all[i] +1);
+                }
+                else if (all[i] == 'z'){
+                    all[i] = 'a';
+                }
+                else if('A'<=all[i] && all[i]<'Z'){
+                    all[i] = (char) ((int) all[i] +1);
+                }
+                else if (all[i] == 'Z'){
+                    all[i] = 'A';
+                }
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+        try(FileWriter fw = new FileWriter(encodedFile)) {
+            fw.write(all);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
+        String encodingFilepath = "C:/Users/Hmb/Desktop/a12/code.txt";
+        String encodedFilepath = "C:/Users/Hmb/Desktop/a12/coded.txt";
+        File f = new File(encodingFilepath);
+        File f2 = new File(encodedFilepath);
+        encodeFile(f, f2);
+
+    }
+}
+#############################################

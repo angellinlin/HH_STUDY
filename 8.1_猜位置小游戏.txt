@@ -1,0 +1,83 @@
+package headFirstJava;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class SimpltDotComTestDrive {
+
+
+
+    public static void main(String[] args) {
+        SimpleDotCom dot = new SimpleDotCom();
+        // 制作结果集合
+        ArrayList<String> locations = dot.makeAim();
+
+        int guessNum = 0;
+        dot.setLocationCells(locations);
+        // 获取用户输入
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter a numner：");
+        String userGuess = sc.nextLine();
+        guessNum +=1;
+        String result = dot.checkYourself(userGuess);
+        while (!"kill".equals(result)){
+            System.out.println("enter a numner：");
+            userGuess = sc.nextLine();
+            guessNum +=1;
+            result = dot.checkYourself(userGuess);
+        }
+        System.out.println("you took " + guessNum + " guess");
+    }
+}
+
+
+
+
+
+
+
+package headFirstJava;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class SimpleDotCom {
+    ArrayList<String> locationCells;
+    int numOfHits = 0;
+
+    public void setLocationCells(ArrayList<String> locationCells){
+        this.locationCells = locationCells;
+    }
+
+    public ArrayList<String> makeAim(){
+        int rand = (int)(Math.random()*5);
+        ArrayList<String> locations = new ArrayList<>();
+        locations.add(String.valueOf(rand));
+        locations.add(String.valueOf(rand+1));
+        locations.add(String.valueOf(rand+2));
+        return locations;
+    }
+
+    public String checkYourself(String stringGuess){
+        int guess = Integer.parseInt(stringGuess);
+        String result = "miss";
+        for(String cell: locationCells){
+            if (String.valueOf(guess).equals(cell)){
+                result = "hit";
+                numOfHits ++;
+                locationCells.remove(cell);
+                break;
+            }
+        }
+        if (locationCells.isEmpty()){
+            result = "kill";
+        }
+        System.out.println(result);
+        System.out.println("#####################");
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int numOfGuess = 0;
+
+    }
+}
+##########################################################
